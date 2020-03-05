@@ -12,6 +12,8 @@ import Main from "./components/main";
 //routes: about me-nonprofessional
 //screenWidth > 900 (md breakpoint) add left/right padding to sections, skills horizontal, project cards, two per row
 
+// /https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
