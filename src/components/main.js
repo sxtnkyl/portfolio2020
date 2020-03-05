@@ -22,6 +22,7 @@ import Contact from "./contact";
 
 const useStyles = makeStyles(theme => ({
   section: {
+    position: "relative",
     backgroundAttachment: "fixed",
     backgroundImage: `url(${espontas})`,
     backgroundPosition: "center",
@@ -40,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   name: {
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.primary.main,
     marginTop: theme.spacing(2),
     paddingLeft: theme.spacing(2),
     paddingBottom: "0px",
