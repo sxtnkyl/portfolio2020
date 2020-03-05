@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { animated, useSpring } from "react-spring";
+import { animated, useSpring, config } from "react-spring";
 import {
   Card,
   CardActions,
@@ -25,20 +25,20 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     minHeight: "40vh",
     border: `1px solid ${theme.palette.primary.light}`,
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: theme.shape.borderRadius
 
-    background: props =>
-      `linear-gradient(${props.deg1}deg, ${RGBopacity(
-        theme.palette.primary.light,
-        0.25
-      )} ${props.x1}%, ${RGBopacity(theme.palette.primary.main, 0.5)} ${
-        props.x1
-      }%), linear-gradient(${props.deg2}deg, ${RGBopacity(
-        theme.palette.primary.light,
-        1
-      )} ${props.x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${
-        props.x2
-      }%)`
+    // background: props =>
+    //   `linear-gradient(${props.deg1}deg, ${RGBopacity(
+    //     theme.palette.primary.light,
+    //     0.25
+    //   )} ${props.x1}%, ${RGBopacity(theme.palette.primary.main, 0.5)} ${
+    //     props.x1
+    //   }%), linear-gradient(${props.deg2}deg, ${RGBopacity(
+    //     theme.palette.primary.light,
+    //     1
+    //   )} ${props.x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${
+    //     props.x2
+    //   }%)`
   },
   slideText: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
@@ -113,60 +113,46 @@ const SingleCard = props => {
 
   const { key } = props;
 
-  const [bg, setBackground] = useState({ deg1: 30, x1: 60, deg2: 40, x2: 70 });
+  const [bg, setBackground] = useState([30, 60, 40, 70]);
   function randomize() {
-    setBackground({
-      deg1: between2Nums(30, 150),
-      deg2: between2Nums(30, 150),
-      x1: between2Nums(30, 60),
-      x2: between2Nums(30, 60)
-    });
+    setBackground([
+      between2Nums(30, 150),
+      between2Nums(30, 60),
+      between2Nums(30, 150),
+      between2Nums(30, 60)
+    ]);
   }
   useEffect(() => {
     randomize();
   }, []);
-  const prevBg = usePrevious(bg);
 
-  const { deg1, x1, deg2, x2 } = useSpring({
-    from: { deg1: 30, x1: 60, deg2: 40, x2: 70 },
-    deg1: 60,
-    x1: 30,
-    deg2: 70,
-    x2: 40
+  const { abcd } = useSpring({
+    from: { abcd: bg },
+    abcd:
+      bg === [30, 60, 40, 70]
+        ? [100, 30, 60, 30]
+        : [
+            between2Nums(30, 150),
+            between2Nums(30, 60),
+            between2Nums(30, 150),
+            between2Nums(30, 60)
+          ],
+    config: config.slow
   });
 
   const animateLines = {
-    background: (deg1, x1, deg2, x2).interpolate(
-      (deg1, x1, deg2, x2) =>
-        `linear-gradient(${deg1}deg, ${RGBopacity(
+    background: abcd.interpolate(
+      (a, b, c, d) =>
+        `linear-gradient(${a}deg, ${RGBopacity(
           theme.palette.primary.light,
           0.25
-        )} ${x1}%, ${RGBopacity(
-          theme.palette.primary.main,
-          0.5
-        )} ${x1}%), linear-gradient(${deg2}deg, ${RGBopacity(
+        )} ${b}%, ${RGBopacity(theme.palette.primary.main, 0.5)} ${b}%), 
+         linear-gradient(${c}deg, ${RGBopacity(
           theme.palette.primary.light,
           1
-        )} ${x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${x2}%)`
+        )} ${d}%, ${RGBopacity(theme.palette.primary.main, 1)} ${d}%)`
     )
   };
-
-  // const animateLines = {
-  //   background: lines.interpolate(
-  //     lines =>
-  //       `linear-gradient(${lines.deg1}deg, ${RGBopacity(
-  //         theme.palette.primary.light,
-  //         0.25
-  //       )} ${lines.x1}%, ${RGBopacity(theme.palette.primary.main, 0.5)} ${
-  //         lines.x1
-  //       }%), linear-gradient(${lines.deg2}deg, ${RGBopacity(
-  //         theme.palette.primary.light,
-  //         1
-  //       )} ${lines.x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${
-  //         lines.x2
-  //       }%)`
-  //   )
-  // };
 
   const [expanded, setExpanded] = useState(false);
   const handleExpandClick = () => {
@@ -222,21 +208,7 @@ const SingleCard = props => {
 
   return (
     <AnimatedCard
-      style={{
-        background: (deg1, x1, deg2, x2).interpolate(
-          (deg1, x1, deg2, x2) =>
-            `linear-gradient(${deg1}deg, ${RGBopacity(
-              theme.palette.primary.light,
-              0.25
-            )} ${x1}%, ${RGBopacity(
-              theme.palette.primary.main,
-              0.5
-            )} ${x1}%), linear-gradient(${deg2}deg, ${RGBopacity(
-              theme.palette.primary.light,
-              1
-            )} ${x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${x2}%)`
-        )
-      }}
+      style={animateLines}
       className={classes.card}
       key={key}
       onClick={randomize}
