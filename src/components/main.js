@@ -27,7 +27,9 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${espontas})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    minHeight: "100vh"
+    minHeight: "100vh",
+    WebkitBackgroundSize: "cover",
+    MozBackgroundSize: "cover"
   },
   filter: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.4),
@@ -41,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   name: {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
     marginTop: theme.spacing(2),
     paddingLeft: theme.spacing(2),
     paddingBottom: "0px",
