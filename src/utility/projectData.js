@@ -25,7 +25,7 @@ const projects = [
       "React, Global Context, Axios API fetching, React Spring, React Router, Material UI, Proptype Verification",
     thumbnail: "",
     codepenUrl: "",
-    githubUrl: ""
+    githubUrl: "https://github.com/sxtnkyl/teambuilder"
   },
   {
     name: "Calculator",
