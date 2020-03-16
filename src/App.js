@@ -13,6 +13,8 @@ import Main from "./components/main";
 //screenWidth > 900 (md breakpoint) add left/right padding to sections, skills horizontal, project cards, two per row
 
 // /https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+//https://medium.com/calyx/serverless-contact-forms-with-aws-lambda-79959cd1a6cd
+//https://www.freecodecamp.org/news/building-serverless-contact-form-for-static-websites/
 
 function App() {
   return (

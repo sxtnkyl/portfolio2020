@@ -28,29 +28,6 @@ const projects = [
     githubUrl: "https://github.com/sxtnkyl/teambuilder"
   },
   {
-    name: "Calculator",
-    summary: "A React calculator with some additional functionality",
-    description:
-      "This React calculator accepts mouse click or keypress to perform basic arithmetic. Multiple values and numbers can be stored or removed while entry errors return error messages. React concepts include event listeners for keypress/click, lifecycle methods, and resetting initial state.",
-    css: "teal",
-    concepts:
-      "React, Event Listeners, React Lifecycle, Initial-State Callback, Error-responsiveness",
-    thumbnail: "calculator",
-    codepenUrl: "https://codepen.io/sxtnkyl/pen/eowRGx",
-    githubUrl: "https://github.com/sxtnkyl/fcc-calculator"
-  },
-  {
-    name: "Drumkit",
-    summary: "Beat machine straight from the 80's.",
-    description:
-      "A beat pad triggered with click or keypress, complete with audio display, volume control and power button. Implements audio fetching, conditional styling, and timout control.",
-    css: "grey",
-    concepts: "React, Conditional-rendering/styling, Audio Integration",
-    thumbnail: "drumkit",
-    codepenUrl: "https://codepen.io/sxtnkyl/pen/WmKodW",
-    githubUrl: "https://github.com/sxtnkyl/drumkit"
-  },
-  {
     name: "Hand Sampler",
     summary:
       "A survey/learning tool for quickly generating geologic soil descriptions.",
@@ -74,6 +51,18 @@ const projects = [
     githubUrl: ""
   },
   {
+    name: "Portfolio Page",
+    summary: "My first portfolio page!",
+    description:
+      "A front-end project to showcase my React skills, made from scratch. Feel free to leave some feedback about the page experience in the contact section!",
+    css: "yellow",
+    concepts:
+      "React, React-spring, Custom-hooks, Ref handling, Styled-components, JS Canvas",
+    thumbnail: "portfolio_page",
+    codepenUrl: "",
+    githubUrl: "https://github.com/sxtnkyl/portfolio_page"
+  },
+  {
     name: "Url Shortener",
     summary:
       "Simple Url shortener to convert any http url into a six character code",
@@ -86,16 +75,27 @@ const projects = [
     githubUrl: "https://github.com/sxtnkyl/urlAPI"
   },
   {
-    name: "Portfolio Page",
-    summary: "My first portfolio page!",
+    name: "Calculator",
+    summary: "A React calculator with some additional functionality",
     description:
-      "A front-end project to showcase my React skills, made from scratch. Feel free to leave some feedback about the page experience in the contact section!",
-    css: "yellow",
+      "This React calculator accepts mouse click or keypress to perform basic arithmetic. Multiple values and numbers can be stored or removed while entry errors return error messages. React concepts include event listeners for keypress/click, lifecycle methods, and resetting initial state.",
+    css: "teal",
     concepts:
-      "React, React-spring, Custom-hooks, Ref handling, Styled-components, JS Canvas",
-    thumbnail: "portfolio_page",
-    codepenUrl: "",
-    githubUrl: "https://github.com/sxtnkyl/portfolio_page"
+      "React, Event Listeners, React Lifecycle, Initial-State Callback, Error-responsiveness",
+    thumbnail: "calculator",
+    codepenUrl: "https://codepen.io/sxtnkyl/pen/eowRGx",
+    githubUrl: "https://github.com/sxtnkyl/fcc-calculator"
+  },
+  {
+    name: "Drumkit",
+    summary: "Beat machine straight from the 80's.",
+    description:
+      "A beat pad triggered with click or keypress, complete with audio display, volume control and power button. Implements audio fetching, conditional styling, and timout control.",
+    css: "grey",
+    concepts: "React, Conditional-rendering/styling, Audio Integration",
+    thumbnail: "drumkit",
+    codepenUrl: "https://codepen.io/sxtnkyl/pen/WmKodW",
+    githubUrl: "https://github.com/sxtnkyl/drumkit"
   }
 ];
 

@@ -22,8 +22,8 @@ const useStyles = makeStyles(theme => ({
       paddingRight: "10vw"
     }
   },
-  slash: {
-    color: theme.palette.secondary.main
+  dash: {
+    color: theme.palette.primary.light
   },
   skill: {
     fontStyle: "italic"
@@ -52,7 +52,9 @@ const Skills = () => {
       <Grid container spacing={6}>
         {skills.map(s => (
           <Grid item xs={12} sm={6} md={4} key={s}>
-            <Typography variant="subtitle1">- {s}</Typography>
+            <Typography variant="subtitle1">
+              <span className={classes.dash}>- </span> {s}
+            </Typography>
           </Grid>
         ))}
       </Grid>

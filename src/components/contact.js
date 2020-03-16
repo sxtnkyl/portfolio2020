@@ -14,6 +14,9 @@ import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 
+//https://www.freecodecamp.org/news/building-serverless-contact-form-for-static-websites/
+//https://getform.io/
+
 const useStyles = makeStyles(theme => ({
   section: {
     position: "relative",
@@ -86,11 +89,40 @@ const CssTextField = withStyles(theme => ({
 }))(TextField);
 
 const Contact = () => {
-  const [name, setName] = useState("Composed TextField");
   const classes = useStyles();
 
-  const handleChange = event => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleNameChange = event => {
     setName(event.target.value);
+  };
+  const handleEmailChange = event => {
+    setEmail(event.target.value);
+  };
+  const handleMessageChange = event => {
+    setMessage(event.target.value);
+  };
+
+  const handleSubmit = async () => {
+    let url = "https://hyg8924gv0.execute-api.us-east-1.amazonaws.com/beta";
+    const data = { name: name, email: email, message: message };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Success:", data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
   };
 
   const ref = useRef();
@@ -118,6 +150,8 @@ const Contact = () => {
               className={classes.label}
               label="Name"
               variant="outlined"
+              value={name}
+              onChange={handleNameChange}
             />
           </Grid>
           <Grid item xs={12} lg={6}>
@@ -125,6 +159,8 @@ const Contact = () => {
               className={classes.label}
               label="Email"
               variant="outlined"
+              value={email}
+              onChange={handleEmailChange}
             />
           </Grid>
           <Grid item xs={12} lg={12}>
@@ -133,10 +169,12 @@ const Contact = () => {
               variant="outlined"
               multiline={true}
               rows={4}
+              value={message}
+              onChange={handleMessageChange}
             />
           </Grid>
           <Grid item xs={4} lg={4}>
-            <Button variant="outlined" fullWidth>
+            <Button variant="outlined" fullWidth onClick={handleSubmit}>
               Send
             </Button>
           </Grid>
