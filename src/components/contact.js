@@ -106,7 +106,7 @@ const Contact = () => {
   };
 
   const handleSubmit = async () => {
-    let url = "https://hyg8924gv0.execute-api.us-east-1.amazonaws.com/beta/";
+    let url = "https://1ai36bi83k.execute-api.us-east-1.amazonaws.com/beta";
     const data = { name: name, email: email, message: message };
 
     //add check for empty string data later
