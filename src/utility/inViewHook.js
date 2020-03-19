@@ -44,11 +44,9 @@ function useInView(ref, threshold) {
       }
     );
     if (ref.current) {
-      console.log("called");
       observer.observe(ref.current);
     }
     return () => {
-      console.log("called");
       observer.disconnect();
     };
   }); // Empty array ensures that effect is only run on mount and unmount

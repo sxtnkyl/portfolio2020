@@ -106,9 +106,10 @@ const Contact = () => {
   };
 
   const handleSubmit = async () => {
-    let url = "https://hyg8924gv0.execute-api.us-east-1.amazonaws.com/beta";
+    let url = "https://hyg8924gv0.execute-api.us-east-1.amazonaws.com/beta/";
     const data = { name: name, email: email, message: message };
 
+    //add check for empty string data later
     fetch(url, {
       method: "POST",
       headers: {
@@ -121,7 +122,7 @@ const Contact = () => {
         console.log("Success:", data);
       })
       .catch(error => {
-        console.error("Error:", error);
+        console.error("frontend Error:", error);
       });
   };
 
