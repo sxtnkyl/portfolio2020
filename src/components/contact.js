@@ -106,10 +106,11 @@ const Contact = () => {
   };
 
   const handleSubmit = async () => {
-    let url = "https://1ai36bi83k.execute-api.us-east-1.amazonaws.com/beta";
+    let url = "https://p7ysgxdxv6.execute-api.us-east-1.amazonaws.com/beta";
     const data = { name: name, email: email, message: message };
 
     //add check for empty string data later
+    //https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
     fetch(url, {
       method: "POST",
       headers: {
