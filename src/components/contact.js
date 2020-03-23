@@ -24,7 +24,9 @@ const useStyles = makeStyles(theme => ({
     backgroundAttachment: "fixed",
     backgroundImage: `url(${deepSea})`,
     backgroundPosition: "center",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    WebkitBackgroundSize: "cover",
+    MozBackgroundSize: "cover"
   },
   filter: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
@@ -110,11 +112,14 @@ const Contact = () => {
     const data = { name: name, email: email, message: message };
 
     //add check for empty string data later
+    //add 'sent' confirmation and keep in view
     //https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
     fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":
+          "https://sxtnkyl.github.io/portfolio2020/"
       },
       body: JSON.stringify(data)
     })

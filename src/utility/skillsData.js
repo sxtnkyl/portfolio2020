@@ -16,7 +16,7 @@ const skillData = [
       "React",
       "React Spring",
       "React Router",
-      "Axios",
+      "Axios/Fetch API",
       "Material UI",
       "Styled Components",
       "P5",
@@ -33,7 +33,7 @@ const skillData = [
       "Hashing",
       "PostgreSQL",
       "Postman",
-      "AWS",
+      "AWS S3/Route 53/Lambda/IAM/API Gateway/SES/Cloud Watch",
       "CORS Integration"
     ]
   },
