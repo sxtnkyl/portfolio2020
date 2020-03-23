@@ -118,8 +118,7 @@ const Contact = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin":
-          "https://sxtnkyl.github.io/portfolio2020/"
+        Origin: "https://sxtnkyl.github.io/portfolio2020"
       },
       body: JSON.stringify(data)
     })
