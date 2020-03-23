@@ -118,7 +118,7 @@ const Contact = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Origin: "https://sxtnkyl.github.io/portfolio2020"
+        Origin: "https://sxtnkyl.github.io/portfolio2020:443"
       },
       body: JSON.stringify(data)
     })
