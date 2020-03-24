@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useSpring, animated } from "react-spring";
 import deepSea from "../theme/deepSea3.jpg";
 import RGBopacity from "../utility/RGBopacity";
 import {
@@ -7,10 +8,12 @@ import {
   TextField,
   Typography,
   Divider,
+  DoneOutline,
   withStyles,
   makeStyles
 } from "../theme/themIndex";
 import useInView from "../utility/inViewHook";
+import mediaToPx from "../utility/mediaToPx";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 
@@ -60,6 +63,27 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: "10vw",
       paddingRight: "10vw"
     }
+  },
+  iconButton: {
+    color: theme.palette.secondary.main,
+    width: mediaToPx(theme, "h4", "xs"),
+    height: mediaToPx(theme, "h4", "xs"),
+    [theme.breakpoints.up("sm")]: {
+      width: mediaToPx(theme, "h4", "sm"),
+      height: mediaToPx(theme, "h4", "sm")
+    },
+    [theme.breakpoints.up("md")]: {
+      width: mediaToPx(theme, "h4", "md"),
+      height: mediaToPx(theme, "h4", "md")
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: mediaToPx(theme, "h4", "lg"),
+      height: mediaToPx(theme, "h4", "lg")
+    }
+  },
+  pad: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2)
   }
 }));
 
@@ -96,6 +120,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(true);
 
   const handleNameChange = event => {
     setName(event.target.value);
@@ -125,6 +150,7 @@ const Contact = () => {
       .then(response => response.json())
       .then(data => {
         console.log("Success:", data);
+        setOpen(true);
       })
       .catch(error => {
         console.error("frontend Error:", error);
@@ -183,6 +209,25 @@ const Contact = () => {
             <Button variant="outlined" fullWidth onClick={handleSubmit}>
               Send
             </Button>
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          spacing={4}
+          alignItems="center"
+          justify="center"
+          className={classes.grid}
+        >
+          <Grid item xs={3} lg={4} justify="center">
+            {open && (
+              <Button
+                variant="outlined"
+                fullWidth
+                onClick={() => setOpen(false)}
+              >
+                <DoneOutline className={classes.pad} /> Email Sent
+              </Button>
+            )}
           </Grid>
         </Grid>
       </div>

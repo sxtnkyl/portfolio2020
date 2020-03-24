@@ -60,7 +60,8 @@ import {
   GitHub,
   LinkedIn,
   Twitter,
-  Info
+  Info,
+  DoneOutline
 } from "@material-ui/icons";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -128,5 +129,6 @@ export {
   OutlinedInput,
   KeyboardArrowUp,
   Info,
-  Popover
+  Popover,
+  DoneOutline
 };
