@@ -32,7 +32,7 @@ const projects = [
     summary:
       "A survey/learning tool for quickly generating geologic soil descriptions.",
     description:
-      "An exercise in exploring various Material-UI components and form construction. Progress through a series of questions with different submission methods and layouts to generate a soil sample name.",
+      "An exercise in exploring various Material-UI components and form construction. Progress through a series of questions with different submission methods and layouts to generate a soil sample name. Can be applied for field use or a learning tool",
     css: "grey",
     concepts: "React, Material-UI, Material-theming, Form Submission",
     thumbnail: "drill",

@@ -8,7 +8,7 @@ import {
   Button,
   GitHub,
   KeyboardArrowUp,
-  makeStyles
+  makeStyles,
 } from "../theme/themIndex";
 import between2Nums from "../utility/between2";
 import RGBopacity from "../utility/RGBopacity";
@@ -20,12 +20,12 @@ import { CardContent } from "@material-ui/core";
 ///////card with top left offset media, github/codepen botleft, title at botright w/ expansion
 ///expansion with details, follow skills style
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   card: {
     position: "relative",
     minHeight: "40vh",
     border: `1px solid ${theme.palette.primary.light}`,
-    borderRadius: theme.shape.borderRadius
+    borderRadius: theme.shape.borderRadius,
 
     // background: props =>
     //   `linear-gradient(${props.deg1}deg, ${RGBopacity(
@@ -46,14 +46,15 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     position: "absolute",
     zIndex: 2,
-    overflow: "auto"
+    overflow: "auto",
   },
   arrow: {
+    cursor: "pointer",
     position: "absolute",
     bottom: theme.spacing(1),
     right: theme.spacing(1),
     fontSize: theme.spacing(5),
-    zIndex: "4"
+    zIndex: "4",
   },
   title: {
     color: theme.palette.primary.contrastText,
@@ -62,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     textShadow: `${theme.palette.primary.light} 0px 2px 10px,
     ${theme.palette.primary.light} 2px 0px 10px,
     ${theme.palette.primary.light} 0px -2px 10px,
-    ${theme.palette.primary.light} -2px 0px 10px`
+    ${theme.palette.primary.light} -2px 0px 10px`,
   },
   concepts: {
     fontStyle: "italic",
@@ -72,15 +73,15 @@ const useStyles = makeStyles(theme => ({
     textShadow: `${theme.palette.primary.light} 0px 2px 10px,
     ${theme.palette.primary.light} 2px 0px 10px,
     ${theme.palette.primary.light} 0px -2px 10px,
-    ${theme.palette.primary.light} -2px 0px 10px`
+    ${theme.palette.primary.light} -2px 0px 10px`,
   },
   divider: {
     marginTop: theme.spacing(2),
-    backgroundColor: theme.palette.primary.contrastText
+    backgroundColor: theme.palette.primary.contrastText,
   },
   pad: {
     marginLeft: "0px",
-    backgroundColor: theme.palette.primary.light
+    backgroundColor: theme.palette.primary.light,
   },
   iconButton: {
     color: theme.palette.secondary.main,
@@ -88,27 +89,27 @@ const useStyles = makeStyles(theme => ({
     height: mediaToPx(theme, "h4", "xs"),
     [theme.breakpoints.up("sm")]: {
       width: mediaToPx(theme, "h4", "sm"),
-      height: mediaToPx(theme, "h4", "sm")
+      height: mediaToPx(theme, "h4", "sm"),
     },
     [theme.breakpoints.up("md")]: {
       width: mediaToPx(theme, "h4", "md"),
-      height: mediaToPx(theme, "h4", "md")
+      height: mediaToPx(theme, "h4", "md"),
     },
     [theme.breakpoints.up("lg")]: {
       width: mediaToPx(theme, "h4", "lg"),
-      height: mediaToPx(theme, "h4", "lg")
-    }
-  }
+      height: mediaToPx(theme, "h4", "lg"),
+    },
+  },
 }));
 
-const SingleCard = props => {
+const SingleCard = (props) => {
   const {
     name,
     summary,
     description,
     concepts,
     githubUrl,
-    codepenUrl
+    codepenUrl,
   } = props.proj;
 
   const { key } = props;
@@ -119,7 +120,7 @@ const SingleCard = props => {
       between2Nums(30, 150),
       between2Nums(30, 60),
       between2Nums(30, 150),
-      between2Nums(30, 60)
+      between2Nums(30, 60),
     ]);
   }
   useEffect(() => {
@@ -135,9 +136,9 @@ const SingleCard = props => {
             between2Nums(30, 150),
             between2Nums(30, 60),
             between2Nums(30, 150),
-            between2Nums(30, 60)
+            between2Nums(30, 60),
           ],
-    config: config.slow
+    config: config.slow,
   });
 
   const animateLines = {
@@ -151,7 +152,7 @@ const SingleCard = props => {
           theme.palette.primary.light,
           1
         )} ${d}%, ${RGBopacity(theme.palette.primary.main, 1)} ${d}%)`
-    )
+    ),
   };
 
   const [expanded, setExpanded] = useState(false);
@@ -162,13 +163,13 @@ const SingleCard = props => {
   const classes = useStyles(bg);
 
   const slideText = useSpring({
-    top: !expanded ? "100%" : "0"
+    top: !expanded ? "100%" : "0",
   });
   const rotateArrow = useSpring({
-    transform: !expanded ? "rotate(0deg)" : "rotate(180deg)"
+    transform: !expanded ? "rotate(0deg)" : "rotate(180deg)",
   });
   const fadeOut = useSpring({
-    opacity: !expanded ? "1" : "0"
+    opacity: !expanded ? "1" : "0",
   });
 
   const AnimatedCard = animated(Card);

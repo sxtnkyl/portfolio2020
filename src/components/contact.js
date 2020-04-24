@@ -10,7 +10,7 @@ import {
   Divider,
   DoneOutline,
   withStyles,
-  makeStyles
+  makeStyles,
 } from "../theme/themIndex";
 import useInView from "../utility/inViewHook";
 import mediaToPx from "../utility/mediaToPx";
@@ -20,7 +20,7 @@ import { fade } from "@material-ui/core/styles/colorManipulator";
 //https://www.freecodecamp.org/news/building-serverless-contact-form-for-static-websites/
 //https://getform.io/
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   section: {
     position: "relative",
     minHeight: "100vh",
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: "center",
     backgroundSize: "cover",
     WebkitBackgroundSize: "cover",
-    MozBackgroundSize: "cover"
+    MozBackgroundSize: "cover",
   },
   filter: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
@@ -42,8 +42,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(6),
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
-      paddingRight: "10vw"
-    }
+      paddingRight: "10vw",
+    },
   },
   title: {
     paddingBottom: theme.spacing(2),
@@ -54,15 +54,15 @@ const useStyles = makeStyles(theme => ({
     ${theme.palette.primary.light} -2px 0px 10px`,
     [theme.breakpoints.up("md")]: {
       paddingBottom: theme.spacing(6),
-      paddingTop: theme.spacing(6)
-    }
+      paddingTop: theme.spacing(6),
+    },
   },
   grid: {
     paddingTop: theme.spacing(2),
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
-      paddingRight: "10vw"
-    }
+      paddingRight: "10vw",
+    },
   },
   iconButton: {
     color: theme.palette.secondary.main,
@@ -70,48 +70,51 @@ const useStyles = makeStyles(theme => ({
     height: mediaToPx(theme, "h4", "xs"),
     [theme.breakpoints.up("sm")]: {
       width: mediaToPx(theme, "h4", "sm"),
-      height: mediaToPx(theme, "h4", "sm")
+      height: mediaToPx(theme, "h4", "sm"),
     },
     [theme.breakpoints.up("md")]: {
       width: mediaToPx(theme, "h4", "md"),
-      height: mediaToPx(theme, "h4", "md")
+      height: mediaToPx(theme, "h4", "md"),
     },
     [theme.breakpoints.up("lg")]: {
       width: mediaToPx(theme, "h4", "lg"),
-      height: mediaToPx(theme, "h4", "lg")
-    }
+      height: mediaToPx(theme, "h4", "lg"),
+    },
   },
   pad: {
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2)
-  }
+    marginRight: theme.spacing(2),
+  },
 }));
 
-const CssTextField = withStyles(theme => ({
+const CssTextField = withStyles((theme) => ({
   root: {
     transition: theme.transitions.create(["background-color", "border"], {
-      duration: theme.transitions.duration.short
+      duration: theme.transitions.duration.short,
     }),
     "&:hover": {
       backgroundColor: fade(
         theme.palette.text.primary,
         theme.palette.action.hoverOpacity
-      )
+      ),
     },
     "& label.Mui-focused": {
-      color: theme.palette.secondary.main
+      color: theme.palette.secondary.main,
     },
     "& .MuiOutlinedInput-root": {
       color: theme.palette.primary.contrastText,
       "& fieldset": {
-        borderColor: theme.palette.primary.light
+        borderColor: theme.palette.primary.light,
+      },
+      "&:hover fieldset": {
+        borderColor: theme.palette.primary.contrastText,
       },
       "&.Mui-focused fieldset": {
         borderColor: theme.palette.primary.contrastText,
-        borderWidth: "1px"
-      }
-    }
-  }
+        borderWidth: "1px",
+      },
+    },
+  },
 }))(TextField);
 
 const Contact = () => {
@@ -122,13 +125,13 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
 
-  const handleNameChange = event => {
+  const handleNameChange = (event) => {
     setName(event.target.value);
   };
-  const handleEmailChange = event => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-  const handleMessageChange = event => {
+  const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
 
@@ -143,16 +146,16 @@ const Contact = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Origin: "https://sxtnkyl.github.io/portfolio2020:443"
+        Origin: "https://sxtnkyl.github.io/portfolio2020:443",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log("Success:", data);
         setOpen(true);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("frontend Error:", error);
       });
   };
