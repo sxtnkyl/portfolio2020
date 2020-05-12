@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import { useSpring, animated } from "react-spring";
+import React, { useState, useEffect, useRef } from "react";
 import deepSea from "../theme/deepSea3.jpg";
 import RGBopacity from "../utility/RGBopacity";
 import {
@@ -9,13 +8,10 @@ import {
   Typography,
   Divider,
   DoneOutline,
-  withStyles,
   makeStyles,
 } from "../theme/themIndex";
 import useInView from "../utility/inViewHook";
-import mediaToPx from "../utility/mediaToPx";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 
 //https://www.freecodecamp.org/news/building-serverless-contact-form-for-static-websites/
 //https://getform.io/
@@ -45,13 +41,10 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "10vw",
     },
   },
-  title: {
-    paddingBottom: theme.spacing(2),
+  subTitle: {
+    color: theme.palette.primary.contrastText,
     textAlign: "center",
-    textShadow: `${theme.palette.primary.light} 0px 2px 10px,
-    ${theme.palette.primary.light} 2px 0px 10px,
-    ${theme.palette.primary.light} 0px -2px 10px,
-    ${theme.palette.primary.light} -2px 0px 10px`,
+    textShadow: theme.palette.textShadow,
     [theme.breakpoints.up("md")]: {
       paddingBottom: theme.spacing(6),
       paddingTop: theme.spacing(6),
@@ -64,58 +57,11 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "10vw",
     },
   },
-  iconButton: {
-    color: theme.palette.secondary.main,
-    width: mediaToPx(theme, "h4", "xs"),
-    height: mediaToPx(theme, "h4", "xs"),
-    [theme.breakpoints.up("sm")]: {
-      width: mediaToPx(theme, "h4", "sm"),
-      height: mediaToPx(theme, "h4", "sm"),
-    },
-    [theme.breakpoints.up("md")]: {
-      width: mediaToPx(theme, "h4", "md"),
-      height: mediaToPx(theme, "h4", "md"),
-    },
-    [theme.breakpoints.up("lg")]: {
-      width: mediaToPx(theme, "h4", "lg"),
-      height: mediaToPx(theme, "h4", "lg"),
-    },
-  },
-  pad: {
+  sentCheck: {
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
   },
 }));
-
-const CssTextField = withStyles((theme) => ({
-  root: {
-    transition: theme.transitions.create(["background-color", "border"], {
-      duration: theme.transitions.duration.short,
-    }),
-    "&:hover": {
-      backgroundColor: fade(
-        theme.palette.text.primary,
-        theme.palette.action.hoverOpacity
-      ),
-    },
-    "& label.Mui-focused": {
-      color: theme.palette.secondary.main,
-    },
-    "& .MuiOutlinedInput-root": {
-      color: theme.palette.primary.contrastText,
-      "& fieldset": {
-        borderColor: theme.palette.primary.light,
-      },
-      "&:hover fieldset": {
-        borderColor: theme.palette.primary.contrastText,
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: theme.palette.primary.contrastText,
-        borderWidth: "1px",
-      },
-    },
-  },
-}))(TextField);
 
 const Contact = () => {
   const classes = useStyles();
@@ -124,6 +70,11 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 5000);
+  }, [open]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -169,7 +120,7 @@ const Contact = () => {
       <div className={classes.filter}>
         {sectionTitle}
         <Divider variant="fullWidth" />
-        <Typography className={classes.title} variant="h6">
+        <Typography className={classes.subTitle} variant="h4">
           Get in touch, I'd love to hear from you!
         </Typography>
 
@@ -181,8 +132,7 @@ const Contact = () => {
           className={classes.grid}
         >
           <Grid item xs={12} lg={6}>
-            <CssTextField
-              className={classes.label}
+            <TextField
               label="Name"
               variant="outlined"
               value={name}
@@ -190,8 +140,7 @@ const Contact = () => {
             />
           </Grid>
           <Grid item xs={12} lg={6}>
-            <CssTextField
-              className={classes.label}
+            <TextField
               label="Email"
               variant="outlined"
               value={email}
@@ -199,7 +148,7 @@ const Contact = () => {
             />
           </Grid>
           <Grid item xs={12} lg={12}>
-            <CssTextField
+            <TextField
               label="Message"
               variant="outlined"
               multiline={true}
@@ -221,14 +170,15 @@ const Contact = () => {
           justify="center"
           className={classes.grid}
         >
-          <Grid item xs={3} lg={4} justify="center">
+          <Grid item xs={3} lg={4}>
             {open && (
               <Button
-                variant="outlined"
+                variant="text"
+                disabled
                 fullWidth
                 onClick={() => setOpen(false)}
               >
-                <DoneOutline className={classes.pad} /> Email Sent
+                <DoneOutline className={classes.sentCheck} /> Email Sent
               </Button>
             )}
           </Grid>

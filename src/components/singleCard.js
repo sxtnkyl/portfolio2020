@@ -14,7 +14,6 @@ import between2Nums from "../utility/between2";
 import RGBopacity from "../utility/RGBopacity";
 import mediaToPx from "../utility/mediaToPx";
 import theme from "../theme/muiTheme";
-import usePrevious from "../utility/usePrevious";
 import { CardContent } from "@material-ui/core";
 
 ///////card with top left offset media, github/codepen botleft, title at botright w/ expansion
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.shape.borderRadius,
     color: theme.palette.primary.contrastText,
   },
-  slideText: {
+  slidingText: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
     width: "100%",
     height: "100%",
@@ -57,21 +56,14 @@ const useStyles = makeStyles((theme) => ({
     zIndex: "4",
   },
   title: {
-    fontFamily: "Alatsi",
     paddingBottom: theme.spacing(0),
-    textShadow: `${theme.palette.primary.light} 0px 2px 10px,
-    ${theme.palette.primary.light} 2px 0px 10px,
-    ${theme.palette.primary.light} 0px -2px 10px,
-    ${theme.palette.primary.light} -2px 0px 10px`,
+    textShadow: theme.palette.textShadow,
   },
   concepts: {
     fontStyle: "italic",
     fontFamily: "Alatsi",
     padding: theme.spacing(2),
-    textShadow: `${theme.palette.primary.light} 0px 2px 10px,
-    ${theme.palette.primary.light} 2px 0px 10px,
-    ${theme.palette.primary.light} 0px -2px 10px,
-    ${theme.palette.primary.light} -2px 0px 10px`,
+    textShadow: theme.palette.textShadow,
   },
   divider: {
     marginTop: theme.spacing(2),
@@ -111,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SingleCard = (props) => {
+  const { key } = props;
   const {
     name,
     summary,
@@ -119,8 +112,6 @@ const SingleCard = (props) => {
     githubUrl,
     codepenUrl,
   } = props.proj;
-
-  const { key } = props;
 
   const [bg, setBackground] = useState([30, 60, 40, 70]);
   function randomize() {
@@ -149,7 +140,7 @@ const SingleCard = (props) => {
     config: config.slow,
   });
 
-  const animateLines = {
+  const springCardLines = {
     background: abcd.interpolate(
       (a, b, c, d) =>
         `linear-gradient(${a}deg, ${RGBopacity(
@@ -169,8 +160,14 @@ const SingleCard = (props) => {
   };
 
   const classes = useStyles(bg);
+  const AnimatedCard = animated(Card);
+  const AnimatedContent = animated(CardContent);
+  const AnimatedArrow = animated(KeyboardArrowUp);
+  const AnimatedTitle = animated(Typography);
+  const AnimatedConcepts = animated(Typography);
+  const AnimatedDivider = animated(Divider);
 
-  const slideText = useSpring({
+  const slidingText = useSpring({
     top: !expanded ? "100%" : "0",
   });
   const rotateArrow = useSpring({
@@ -180,38 +177,8 @@ const SingleCard = (props) => {
     opacity: !expanded ? "1" : "0",
   });
 
-  const AnimatedCard = animated(Card);
-  const AnimatedContent = animated(CardContent);
-  const AnimatedArrow = animated(KeyboardArrowUp);
-  const AnimatedTitle = animated(Typography);
-  const AnimatedConcepts = animated(Typography);
-  const AnimatedDivider = animated(Divider);
-
-  const liveDemo = codepenUrl && (
-    <Button
-      variant="outlined"
-      target="_blank"
-      rel="noopener noreferrer"
-      href={codepenUrl}
-      style={{ marginRight: "16px" }}
-    >
-      <span className={classes.demoButton}>Live Demo</span>
-    </Button>
-  );
-
-  const gitLink = githubUrl && (
-    <Button
-      variant="outlined"
-      target="_blank"
-      rel="noopener noreferrer"
-      href={githubUrl}
-    >
-      <GitHub className={classes.iconButton} />
-    </Button>
-  );
-
-  const slideInfo = (
-    <AnimatedContent style={slideText} className={classes.slideText}>
+  const slidingInfo = (
+    <AnimatedContent style={slidingText} className={classes.slidingText}>
       <CardActions>
         <Typography variant="h5">{name}</Typography>
       </CardActions>
@@ -221,15 +188,34 @@ const SingleCard = (props) => {
         <Divider className={classes.pad} variant="middle" />
         <Typography variant="body1">{description}</Typography>
         <Divider className={classes.pad} variant="middle" />
-        {liveDemo}
-        {gitLink}
+        {codepenUrl && (
+          <Button
+            variant="outlined"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={codepenUrl}
+            style={{ marginRight: "16px" }}
+          >
+            <span className={classes.demoButton}>Live Demo</span>
+          </Button>
+        )}
+        {githubUrl && (
+          <Button
+            variant="outlined"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={githubUrl}
+          >
+            <GitHub className={classes.iconButton} />
+          </Button>
+        )}
       </CardContent>
     </AnimatedContent>
   );
 
   return (
     <AnimatedCard
-      style={animateLines}
+      style={springCardLines}
       className={classes.card}
       key={key}
       onClick={randomize}
@@ -254,7 +240,7 @@ const SingleCard = (props) => {
         className={classes.arrow}
         onClick={handleExpandClick}
       />
-      {slideInfo}
+      {slidingInfo}
     </AnimatedCard>
   );
 };

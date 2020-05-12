@@ -46,6 +46,7 @@ import {
   OutlinedInput,
   Popover,
   Link,
+  Tooltip,
 } from "@material-ui/core";
 
 import {
@@ -133,4 +134,5 @@ export {
   Popover,
   DoneOutline,
   Link,
+  Tooltip,
 };

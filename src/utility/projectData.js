@@ -100,18 +100,18 @@ const projects = [
   },
 ];
 
-const otherProjects = [
-  {
-    name: "Markdown Previewer",
-    summary: "A Markdown editor with realtime preview",
-    description:
-      "A simple Markdown previewer. Input the Markdown language in the editor side and have it converted and displayed on the previewer side.",
-    css: "#292b2c",
-    concepts: "React, Markdown, Bootstrap",
-    thumbnail: "markdown_previewer",
-    codepenUrl: "https://codepen.io/sxtnkyl/pen/KEMqPb",
-    githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc",
-  },
-];
+// const otherProjects = [
+//   {
+//     name: "Markdown Previewer",
+//     summary: "A Markdown editor with realtime preview",
+//     description:
+//       "A simple Markdown previewer. Input the Markdown language in the editor side and have it converted and displayed on the previewer side.",
+//     css: "#292b2c",
+//     concepts: "React, Markdown, Bootstrap",
+//     thumbnail: "markdown_previewer",
+//     codepenUrl: "https://codepen.io/sxtnkyl/pen/KEMqPb",
+//     githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc",
+//   },
+// ];
 
 export default projects;

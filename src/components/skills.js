@@ -24,12 +24,6 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "10vw",
     },
   },
-  skill: {
-    fontStyle: "italic",
-  },
-  stretch: {
-    width: "100%",
-  },
   active: {
     color: theme.palette.secondary.main,
   },
@@ -46,12 +40,15 @@ const useStyles = makeStyles((theme) => ({
 const Skills = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const skills = skillData.map((s) => {
+  const ref = useRef();
+  const onScreen = useInView(ref, 1);
+  const sectionTitle = useSectionTitleSlide("Skills", onScreen, ref);
+
+  const skillsCategories = skillData.map((s) => {
     let { category, skills } = s;
     skills.sort();
 
@@ -92,16 +89,12 @@ const Skills = () => {
     );
   });
 
-  const ref = useRef();
-  const onScreen = useInView(ref, 1);
-  const sectionTitle = useSectionTitleSlide("Skills", onScreen, ref);
-
   return (
     <Grid item xs={12} className={classes.section} id="skills">
       {sectionTitle}
       <Divider variant="fullWidth" />
       <Grid container spacing={4} className={classes.grid}>
-        {skills}
+        {skillsCategories}
       </Grid>
       <Typography variant="subtitle1" style={{ marginTop: "32px" }}>
         <Link

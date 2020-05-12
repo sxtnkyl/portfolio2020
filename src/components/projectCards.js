@@ -1,29 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Grid,
-  Card,
-  Typography,
-  Divider,
-  makeStyles
-} from "../theme/themIndex";
+import React, { useRef } from "react";
+import { Grid, Divider, makeStyles } from "../theme/themIndex";
 import SingleCard from "./singleCard";
 import projects from "../utility/projectData";
 import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
-import between2Nums from "../utility/between2";
-import RGBopacity from "../utility/RGBopacity";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: "100vh",
     padding: theme.spacing(6),
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
-      paddingRight: "10vw"
-    }
+      paddingRight: "10vw",
+    },
   },
-  grid: {},
-  item: {}
 }));
 
 const ProjectCards = () => {
