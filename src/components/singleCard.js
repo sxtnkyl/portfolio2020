@@ -179,14 +179,25 @@ const SingleCard = (props) => {
   const AnimatedConcepts = animated(Typography);
   const AnimatedDivider = animated(Divider);
 
-  const liveDemo = (
-    <Button variant="outlined" target="_blank" href={codepenUrl && codepenUrl}>
+  const liveDemo = codepenUrl && (
+    <Button
+      variant="outlined"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={codepenUrl}
+      style={{ marginRight: "16px" }}
+    >
       Live Demo
     </Button>
   );
 
-  const gitLink = (
-    <Button variant="outlined" target="_blank" href={githubUrl && githubUrl}>
+  const gitLink = githubUrl && (
+    <Button
+      variant="outlined"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={githubUrl}
+    >
       <GitHub className={classes.iconButton} />
     </Button>
   );
@@ -202,7 +213,8 @@ const SingleCard = (props) => {
         <Divider className={classes.pad} variant="middle" />
         <Typography variant="body1">{description}</Typography>
         <Divider className={classes.pad} variant="middle" />
-        {codepenUrl ? liveDemo : gitLink}
+        {liveDemo}
+        {gitLink}
       </CardContent>
     </AnimatedContent>
   );

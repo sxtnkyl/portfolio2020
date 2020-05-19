@@ -44,7 +44,8 @@ import {
   Collapse,
   InputLabel,
   OutlinedInput,
-  Popover
+  Popover,
+  Link,
 } from "@material-ui/core";
 
 import {
@@ -61,7 +62,7 @@ import {
   LinkedIn,
   Twitter,
   Info,
-  DoneOutline
+  DoneOutline,
 } from "@material-ui/icons";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -130,5 +131,6 @@ export {
   KeyboardArrowUp,
   Info,
   Popover,
-  DoneOutline
+  DoneOutline,
+  Link,
 };

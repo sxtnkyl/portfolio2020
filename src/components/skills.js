@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   Grid,
   Divider,
@@ -7,50 +7,54 @@ import {
   ExpansionPanelSummary,
   ExpandMore,
   Typography,
-  makeStyles
+  Link,
+  makeStyles,
 } from "../theme/themIndex";
 import skillData from "../utility/skillsData";
 import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: "70vh",
     padding: theme.spacing(6),
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
-      paddingRight: "10vw"
-    }
-  },
-  dash: {
-    color: theme.palette.primary.light
+      paddingRight: "10vw",
+    },
   },
   skill: {
-    fontStyle: "italic"
+    fontStyle: "italic",
   },
   stretch: {
-    width: "100%"
+    width: "100%",
   },
   active: {
-    color: theme.palette.secondary.main
-  }
+    color: theme.palette.secondary.main,
+  },
+  pdf: {
+    color: theme.palette.primary.light,
+    "&:hover": {
+      color: theme.palette.secondary.main,
+    },
+  },
 }));
 
 const Skills = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
-  const handleChange = panel => (event, isExpanded) => {
+  const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const skills = skillData.map(s => {
+  const skills = skillData.map((s) => {
     let { category, skills } = s;
     skills.sort();
 
     const gridStyle = (
       <Grid container spacing={6}>
-        {skills.map(s => (
+        {skills.map((s) => (
           <Grid item xs={12} sm={6} md={4} key={s}>
             <Typography variant="subtitle1">
               <span className={classes.dash}>- </span> {s}
@@ -96,6 +100,18 @@ const Skills = () => {
       <Grid container spacing={4} className={classes.grid}>
         {skills}
       </Grid>
+      <Typography variant="subtitle1" style={{ marginTop: "32px" }}>
+        <Link
+          className={classes.pdf}
+          // href={fullstack_resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="resume link"
+        >
+          <span style={{ color: "white" }}>* </span>Download Kyle's Formal
+          Resume
+        </Link>
+      </Typography>
     </Grid>
   );
 };

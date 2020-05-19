@@ -24,8 +24,8 @@ const projects = [
     concepts:
       "React, Global Context, Axios API fetching, React Spring, React Router, Material UI, Proptype Verification",
     thumbnail: "",
-    codepenUrl: "",
-    githubUrl: "https://github.com/sxtnkyl/teambuilder"
+    codepenUrl: "https://sxtnkyl.github.io/teambuilder/",
+    githubUrl: "https://github.com/sxtnkyl/teambuilder",
   },
   {
     name: "Hand Sampler",
@@ -36,8 +36,8 @@ const projects = [
     css: "grey",
     concepts: "React, Material-UI, Material-theming, Form Submission",
     thumbnail: "drill",
-    codepenUrl: "",
-    githubUrl: "https://github.com/sxtnkyl/handsampler"
+    codepenUrl: "https://sxtnkyl.github.io/handsampler/",
+    githubUrl: "https://github.com/sxtnkyl/handsampler",
   },
   {
     name: "Pomodoro",
@@ -48,7 +48,7 @@ const projects = [
     concepts: "React Hooks, UseEffect Cleanup",
     thumbnail: "pomodoro",
     codepenUrl: "https://codepen.io/sxtnkyl/pen/KLqLPX",
-    githubUrl: ""
+    githubUrl: "",
   },
   {
     name: "Portfolio Page",
@@ -60,7 +60,7 @@ const projects = [
       "React, React-spring, Custom-hooks, Ref handling, Styled-components, JS Canvas",
     thumbnail: "portfolio_page",
     codepenUrl: "",
-    githubUrl: "https://github.com/sxtnkyl/portfolio_page"
+    githubUrl: "https://github.com/sxtnkyl/portfolio_page",
   },
   {
     name: "Url Shortener",
@@ -72,7 +72,7 @@ const projects = [
     concepts: "CORS, Dotenv, Express, Nodemon, Hashing, PostgreSQL, React",
     thumbnail: "construction",
     codepenUrl: "",
-    githubUrl: "https://github.com/sxtnkyl/urlAPI"
+    githubUrl: "https://github.com/sxtnkyl/urlAPI",
   },
   {
     name: "Calculator",
@@ -84,7 +84,7 @@ const projects = [
       "React, Event Listeners, React Lifecycle, Initial-State Callback, Error-responsiveness",
     thumbnail: "calculator",
     codepenUrl: "https://codepen.io/sxtnkyl/pen/eowRGx",
-    githubUrl: "https://github.com/sxtnkyl/fcc-calculator"
+    githubUrl: "https://github.com/sxtnkyl/fcc-calculator",
   },
   {
     name: "Drumkit",
@@ -95,8 +95,8 @@ const projects = [
     concepts: "React, Conditional-rendering/styling, Audio Integration",
     thumbnail: "drumkit",
     codepenUrl: "https://codepen.io/sxtnkyl/pen/WmKodW",
-    githubUrl: "https://github.com/sxtnkyl/drumkit"
-  }
+    githubUrl: "https://github.com/sxtnkyl/drumkit",
+  },
 ];
 
 const otherProjects = [
@@ -109,8 +109,8 @@ const otherProjects = [
     concepts: "React, Markdown, Bootstrap",
     thumbnail: "markdown_previewer",
     codepenUrl: "https://codepen.io/sxtnkyl/pen/KEMqPb",
-    githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc"
-  }
+    githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc",
+  },
 ];
 
 export default projects;
