@@ -19,7 +19,7 @@ const projects = [
     summary:
       "A spin on a classic API. Use this desktop app to search pokes and build a team.",
     description:
-      "A work in progress, this dynamically fetching front end desktop application has the ability to search each generation of pokemon and display their important data. A sleek user interface allows for transition into future back end based services including user profile login, building and saving of teams, and team-typing data analytics of saved teams.",
+      "This dynamically fetching front end desktop application has the ability to search each generation of pokemon and display their important data. A sleek user interface allows for transition into future back end based services including user profile login, building and saving of teams, and team-typing data analytics of saved teams.",
     css: "",
     concepts:
       "React, Global Context, Axios API fetching, React Spring, React Router, Material UI, Proptype Verification",

@@ -26,19 +26,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "40vh",
     border: `1px solid ${theme.palette.primary.light}`,
     borderRadius: theme.shape.borderRadius,
-
-    // background: props =>
-    //   `linear-gradient(${props.deg1}deg, ${RGBopacity(
-    //     theme.palette.primary.light,
-    //     0.25
-    //   )} ${props.x1}%, ${RGBopacity(theme.palette.primary.main, 0.5)} ${
-    //     props.x1
-    //   }%), linear-gradient(${props.deg2}deg, ${RGBopacity(
-    //     theme.palette.primary.light,
-    //     1
-    //   )} ${props.x2}%, ${RGBopacity(theme.palette.primary.main, 1)} ${
-    //     props.x2
-    //   }%)`
+    color: theme.palette.primary.contrastText,
   },
   slideText: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
@@ -57,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: "4",
   },
   title: {
-    color: theme.palette.primary.contrastText,
     fontFamily: "Alatsi",
     paddingBottom: theme.spacing(0),
     textShadow: `${theme.palette.primary.light} 0px 2px 10px,
@@ -67,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
   },
   concepts: {
     fontStyle: "italic",
-    color: theme.palette.primary.contrastText,
     fontFamily: "Alatsi",
     padding: theme.spacing(2),
     textShadow: `${theme.palette.primary.light} 0px 2px 10px,
@@ -98,6 +84,16 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       width: mediaToPx(theme, "h4", "lg"),
       height: mediaToPx(theme, "h4", "lg"),
+    },
+  },
+  demoButton: {
+    color: theme.palette.secondary.main,
+    padding: "4px",
+    [theme.breakpoints.up("sm")]: {
+      padding: "2px",
+    },
+    [theme.breakpoints.up("md")]: {
+      padding: "4px",
     },
   },
 }));
@@ -187,7 +183,7 @@ const SingleCard = (props) => {
       href={codepenUrl}
       style={{ marginRight: "16px" }}
     >
-      Live Demo
+      <span className={classes.demoButton}>Live Demo</span>
     </Button>
   );
 

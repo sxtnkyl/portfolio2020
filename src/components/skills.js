@@ -33,7 +33,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
   },
   pdf: {
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.contrastText,
+    cursor: "pointer",
+    transition: `all 0.25s ${theme.transitions.easing.easeIn}`,
     "&:hover": {
       color: theme.palette.secondary.main,
     },
