@@ -55,7 +55,7 @@ const projects = [
     name: "Portfolio Page",
     summary: "My first portfolio page!",
     description:
-      "A front-end project to showcase my React skills, made from scratch. Feel free to leave some feedback about the page experience in the contact section!",
+      "A front-end project to showcase my React skills, made from scratch.",
     css: "yellow",
     concepts:
       "React, React-spring, Custom-hooks, Ref handling, Styled-components, JS Canvas",
