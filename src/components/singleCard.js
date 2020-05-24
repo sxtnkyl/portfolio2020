@@ -35,6 +35,18 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     zIndex: 2,
     overflow: "auto",
+    "&::-webkit-scrollbar": {
+      width: theme.spacing(1),
+      opacity: "0.5",
+    },
+    "&::-webkit-scrollbar-track": {
+      width: theme.spacing(2),
+      backgroundColor: theme.palette.primary.main,
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: theme.palette.primary.light,
+      borderRadius: theme.shape.borderRadius,
+    },
   },
   arrow: {
     cursor: "pointer",

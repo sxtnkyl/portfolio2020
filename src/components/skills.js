@@ -10,6 +10,7 @@ import {
   Link,
   makeStyles,
 } from "../theme/themIndex";
+import Kyle_Sexton_fullstack from "../utility/Kyle_Sexton_fullstack.pdf";
 import skillData from "../utility/skillsData";
 import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
@@ -105,7 +106,7 @@ const Skills = () => {
       <Typography variant="subtitle1" style={{ marginTop: "32px" }}>
         <Link
           className={classes.pdf}
-          // href={fullstack_resume}
+          href={Kyle_Sexton_fullstack}
           target="_blank"
           rel="noopener noreferrer"
           alt="resume link"

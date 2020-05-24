@@ -34,7 +34,8 @@ const projects = [
     description:
       "An exercise in exploring various Material-UI components and form construction. Progress through a series of questions with different submission methods and layouts to generate a soil sample name. Can be applied for field use or a learning tool",
     css: "grey",
-    concepts: "React, Material-UI, Material-theming, Form Submission",
+    concepts:
+      "React, Material-UI, Material-theming, Form Submission, Controlled-Components",
     thumbnail: "drill",
     codepenUrl: "https://sxtnkyl.github.io/handsampler/",
     githubUrl: "https://github.com/sxtnkyl/handsampler",
