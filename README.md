@@ -1,6 +1,5 @@
-Come and check it out [HERE](https://sxtnkyl.github.io/portfolio2020/)!
-
 ## Welcome to my Portfolio!
+Come and check it out [HERE](https://sxtnkyl.github.io/portfolio2020/)!
 
 A minimalist layout to easily learn about me.
 With it you can:
