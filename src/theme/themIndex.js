@@ -47,6 +47,8 @@ import {
   Popover,
   Link,
   Tooltip,
+  Avatar,
+  Switch,
 } from "@material-ui/core";
 
 import {
@@ -135,4 +137,6 @@ export {
   DoneOutline,
   Link,
   Tooltip,
+  Avatar,
+  Switch,
 };

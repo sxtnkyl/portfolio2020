@@ -44,7 +44,7 @@ let theme = createMuiTheme({
       color: defaultTheme.palette.secondary.main,
       paddingBottom: defaultTheme.spacing(2),
       paddingTop: defaultTheme.spacing(2),
-      fontFamily: "Alatsi",
+      fontFamily: "Rubik",
       letterSpacing: defaultTheme.spacing(0.2),
     },
     //first section subtitle
@@ -65,7 +65,7 @@ let theme = createMuiTheme({
       color: defaultTheme.palette.secondary.main,
     },
     h6: {
-      fontFamily: "Alatsi",
+      fontFamily: "Rubik",
       color: defaultTheme.palette.primary.contrastText,
     },
     body1: {
@@ -76,7 +76,7 @@ let theme = createMuiTheme({
     subtitle1: {
       fontFamily: "Rubik",
       fontWeight: "inherit",
-      fontStyle: "italic",
+      fontStyle: "",
     },
   },
   overrides: {
@@ -210,6 +210,12 @@ let theme = createMuiTheme({
             borderWidth: "1px",
           },
         },
+      },
+    },
+    MuiSwitch: {
+      track: {
+        border: `1px solid ${defaultTheme.palette.primary.light}`,
+        backgroundColor: defaultTheme.palette.primary.contrastText,
       },
     },
   },

@@ -20,12 +20,17 @@ const useStyles = makeStyles((theme) => ({
   section: {
     position: "relative",
     minHeight: "100vh",
-    backgroundAttachment: "fixed",
-    backgroundImage: `url(${deepSea})`,
-    backgroundPosition: "center",
+    // backgroundAttachment: "fixed",
+    // backgroundImage: `url(${deepSea})`,
+    // backgroundPosition: "center",
+    // backgroundSize: "cover",
+    // WebkitBackgroundSize: "cover",
+    // MozBackgroundSize: "cover",
+    background: `url(${deepSea}) no-repeat center center fixed`,
     backgroundSize: "cover",
     WebkitBackgroundSize: "cover",
     MozBackgroundSize: "cover",
+    OBackgroundSize: "cover",
   },
   filter: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
@@ -170,8 +175,8 @@ const Contact = () => {
           justify="center"
           className={classes.grid}
         >
-          <Grid item xs={3} lg={4}>
-            {open && (
+          {open && (
+            <Grid item xs={3} lg={4}>
               <Button
                 variant="text"
                 disabled
@@ -180,8 +185,8 @@ const Contact = () => {
               >
                 <DoneOutline className={classes.sentCheck} /> Email Sent
               </Button>
-            )}
-          </Grid>
+            </Grid>
+          )}
         </Grid>
       </div>
     </Grid>

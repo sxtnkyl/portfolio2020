@@ -5,10 +5,10 @@ const skillData = [
       "Github-Gitbash",
       "Visual Studio Code",
       "HTML",
-      "CSS",
+      "SCSS",
       "JavaScript",
-      "JS Canvas"
-    ]
+      "NodeJS",
+    ],
   },
   {
     category: "Front End",
@@ -21,8 +21,8 @@ const skillData = [
       "Styled Components",
       "P5",
       "Markdown",
-      "Bootstrap"
-    ]
+      "Bootstrap",
+    ],
   },
   {
     category: "Back End",
@@ -31,11 +31,11 @@ const skillData = [
       "Express",
       "Nodemon",
       "Hashing",
-      "PostgreSQL",
+      "PostgresQL",
       "Postman",
       "AWS S3/Route 53/Lambda/IAM/API Gateway/SES/Cloud Watch",
-      "CORS Integration"
-    ]
+      "CORS Integration",
+    ],
   },
   {
     category: "Certs / Courses / Groups",
@@ -45,8 +45,8 @@ const skillData = [
       "FCC Front End Libraries",
       "Udemy JS Algorithmsand Data Structures Masterclass",
       "Levelup Tutorials- Animating React",
-      "ReactATL Meetup Group"
-    ]
+      "ReactATL Meetup Group",
+    ],
   },
   {
     category: "Consulting Experience",
@@ -57,9 +57,9 @@ const skillData = [
       "Inner company cross-discipline collaboration",
       "Training and oversight of new staff",
       "Expansion of company services through research, acquisition, and application of new technologies",
-      "Independently motivated"
-    ]
-  }
+      "Independently motivated",
+    ],
+  },
 ];
 
 export default skillData;

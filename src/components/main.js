@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { animated, useSpring, config } from "react-spring";
-import Skills from "./skills";
+
 import {
   Grid,
   Button,
@@ -13,23 +13,33 @@ import {
   makeStyles,
   Tooltip,
 } from "../theme/themIndex";
+
 import espontas from "../theme/espontas.jpeg";
 import useInView from "../utility/inViewHook";
 import RGBopacity from "../utility/RGBopacity";
 import mediaToPx from "../utility/mediaToPx";
+
+import About from "./about";
+import Skills from "./skills";
 import ProjectCards from "./projectCards";
 import Contact from "./contact";
 
 const useStyles = makeStyles((theme) => ({
   section: {
     position: "relative",
-    backgroundAttachment: "fixed",
-    backgroundImage: `url(${espontas})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
     minHeight: "100vh",
+    // backgroundAttachment: "fixed",
+    // backgroundImage: `url(${espontas})`,
+    // backgroundPosition: "center",
+    // backgroundSize: "cover",
+    // WebkitBackgroundSize: "cover",
+    // MozBackgroundSize: "cover",
+    //https://css-tricks.com/perfect-full-page-background-image/
+    background: `url(${espontas}) no-repeat center center fixed`,
+    backgroundSize: "cover",
     WebkitBackgroundSize: "cover",
     MozBackgroundSize: "cover",
+    OBackgroundSize: "cover",
   },
   filter: {
     backgroundColor: RGBopacity(theme.palette.primary.main, 0.4),
@@ -128,6 +138,7 @@ const Main = () => {
           <Tooltip
             placement="left-start"
             enterTouchDelay={0}
+            leaveTouchDelay={5000}
             title="Image: Es Pontas, Spain"
           >
             <Button className={classes.info}>
@@ -136,6 +147,7 @@ const Main = () => {
           </Tooltip>
         </div>
       </Grid>
+      <About />
       <Skills />
       <ProjectCards />
       <Contact />
