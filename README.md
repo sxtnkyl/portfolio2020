@@ -1,13 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Come and check it out [HERE](https://sxtnkyl.github.io/portfolio2020/)!
 
 ## Welcome to my Portfolio!
 
 A minimalist layout to easily learn about me.
 With it you can:
 
-*Check out my skills
-*See some projects
-\*Leave a message
+* Check out my skills
+* See some projects
+* Leave a message
 
 Built with:
 
@@ -15,4 +15,4 @@ Built with:
 
 Applied Concepts:
 
-###### `Reactjs` ###### `Custom Hooks` ###### `AWS Lambda` ###### `GitPages` ###### `Intersection Observer API` ###### `React Spring`
+###### `Reactjs` `Custom Hooks` `AWS Lambda` `GitPages` `Intersection Observer API` `React Spring`
