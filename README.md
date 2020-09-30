@@ -10,7 +10,7 @@ With it you can:
 
 Built with:
 
-#### `Reactjs` `Material-UI` `React Spring`
+#### `Reactjs` `Material-UI` `React Spring` `AWS SMS/Lambda`
 
 Applied Concepts:
 
