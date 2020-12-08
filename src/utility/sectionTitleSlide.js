@@ -1,23 +1,29 @@
 import { useSpring, animated, config } from "react-spring";
-import React from "react";
+import React, { useRef } from "react";
 import { Typography } from "../theme/themIndex";
+import useInView from "./inViewHook";
 
-const useSectionTitleSlide = (name, bool, ref) => {
+const useSectionTitleSlide = (name, view, variant) => {
+  const titleRef = useRef(null);
+  const onScreen = useInView(titleRef, view);
+
   const spring = useSpring({
-    opacity: !bool ? "0" : "1",
-    transform: !bool ? "translate3d(-40px, 0, 0)" : "translate3d(0, 0, 0)",
+    opacity: !onScreen ? "0" : "1",
+    transform: !onScreen ? "translate3d(-40px, 0, 0)" : "translate3d(0, 0, 0)",
     config: config.molasses,
   });
 
   const AnimatedTitle = animated(Typography);
 
-  const text = (
-    <AnimatedTitle variant="h2" ref={ref} style={spring}>
+  return (
+    <AnimatedTitle
+      variant={variant}
+      ref={titleRef}
+      style={spring}
+      aria-label={name}>
       {name}
     </AnimatedTitle>
   );
-
-  return text;
 };
 
 export default useSectionTitleSlide;

@@ -13,7 +13,7 @@ const defaultTheme = createMuiTheme({
       main: orange[500],
     },
     textShadow:
-      "#242C36 0px 2px 10px, #242C36 2px 0px 10px, #242C36 0px -2px 10px, #242C36 -2px 0px 10px",
+      "#242C36 0px 2px 5px, #242C36 2px 0px 5px, #242C36 0px -2px 5px, #242C36 -2px 0px 5px",
   },
   shape: {
     borderRadius: 2,
@@ -71,6 +71,8 @@ let theme = createMuiTheme({
     body1: {
       fontFamily: "Rubik",
       fontWeight: "inherit",
+      wordSpacing: "2px",
+      letterSpacing: "0.2px",
     },
     //skills items/pdf link
     subtitle1: {
@@ -109,6 +111,7 @@ let theme = createMuiTheme({
         },
       },
       outlined: {
+        backgroundColor: fade(defaultTheme.palette.primary.main, 0.7),
         border: `1px solid ${defaultTheme.palette.primary.light}`,
         color: defaultTheme.palette.secondary.main,
         "&:hover": {
@@ -198,6 +201,7 @@ let theme = createMuiTheme({
           color: defaultTheme.palette.secondary.main,
         },
         "& .MuiOutlinedInput-root": {
+          backgroundColor: fade(defaultTheme.palette.primary.main, 0.7),
           color: defaultTheme.palette.primary.contrastText,
           "& fieldset": {
             borderColor: defaultTheme.palette.primary.light,

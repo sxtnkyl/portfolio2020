@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import deepSea from "../theme/deepSea3.jpg";
-import RGBopacity from "../utility/RGBopacity";
+import React, { useState, useEffect } from "react";
+import deepSea from "../theme/newContact.jpg";
+
 import {
   Grid,
   Button,
@@ -10,7 +10,9 @@ import {
   DoneOutline,
   makeStyles,
 } from "../theme/themIndex";
-import useInView from "../utility/inViewHook";
+
+import RGBopacity from "../utility/RGBopacity";
+import useAsync from "../utility/useAsync";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
 //https://www.freecodecamp.org/news/building-serverless-contact-form-for-static-websites/
@@ -20,12 +22,6 @@ const useStyles = makeStyles((theme) => ({
   section: {
     position: "relative",
     minHeight: "100vh",
-    // backgroundAttachment: "fixed",
-    // backgroundImage: `url(${deepSea})`,
-    // backgroundPosition: "center",
-    // backgroundSize: "cover",
-    // WebkitBackgroundSize: "cover",
-    // MozBackgroundSize: "cover",
     background: `url(${deepSea}) no-repeat center center fixed`,
     backgroundSize: "cover",
     WebkitBackgroundSize: "cover",
@@ -33,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     OBackgroundSize: "cover",
   },
   filter: {
-    backgroundColor: RGBopacity(theme.palette.primary.main, 0.7),
+    backgroundColor: RGBopacity(theme.palette.primary.main, 0.4),
     width: "100%",
     height: "100%",
     position: "absolute",
@@ -44,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
       paddingRight: "10vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "5vw",
+      paddingRight: "5vw",
     },
   },
   subTitle: {
@@ -62,8 +62,12 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "10vw",
     },
   },
+  sentNotice: {
+    background: "white",
+    border: `1px solid ${theme.palette.primary.main}`,
+  },
   sentCheck: {
-    marginLeft: theme.spacing(2),
+    color: theme.palette.secondary.main,
     marginRight: theme.spacing(2),
   },
 }));
@@ -95,9 +99,6 @@ const Contact = () => {
     let url = "https://p7ysgxdxv6.execute-api.us-east-1.amazonaws.com/beta";
     const data = { name: name, email: email, message: message };
 
-    //add check for empty string data later
-    //add 'sent' confirmation and keep in view
-    //https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
     fetch(url, {
       method: "POST",
       headers: {
@@ -116,17 +117,17 @@ const Contact = () => {
       });
   };
 
-  const ref = useRef();
-  const onScreen = useInView(ref, 1);
-  const sectionTitle = useSectionTitleSlide("Contact", onScreen, ref);
+  const { execute, status } = useAsync(handleSubmit, false);
+
+  const sectionTitle = useSectionTitleSlide("Contact", 0.5, "h2");
 
   return (
-    <Grid item xs={12} className={classes.section} id="contact">
+    <section className={classes.section} id="contact">
       <div className={classes.filter}>
         {sectionTitle}
         <Divider variant="fullWidth" />
         <Typography className={classes.subTitle} variant="h4">
-          Get in touch, I'd love to hear from you!
+          Leave a message, let's collaborate!
         </Typography>
 
         <Grid
@@ -134,10 +135,10 @@ const Contact = () => {
           spacing={4}
           alignItems="center"
           justify="center"
-          className={classes.grid}
-        >
+          className={classes.grid}>
           <Grid item xs={12} lg={6}>
             <TextField
+              id="name"
               label="Name"
               variant="outlined"
               value={name}
@@ -146,6 +147,7 @@ const Contact = () => {
           </Grid>
           <Grid item xs={12} lg={6}>
             <TextField
+              id="email"
               label="Email"
               variant="outlined"
               value={email}
@@ -154,6 +156,7 @@ const Contact = () => {
           </Grid>
           <Grid item xs={12} lg={12}>
             <TextField
+              id="message"
               label="Message"
               variant="outlined"
               multiline={true}
@@ -163,33 +166,28 @@ const Contact = () => {
             />
           </Grid>
           <Grid item xs={4} lg={4}>
-            <Button variant="outlined" fullWidth onClick={handleSubmit}>
-              Send
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          spacing={4}
-          alignItems="center"
-          justify="center"
-          className={classes.grid}
-        >
-          {open && (
-            <Grid item xs={3} lg={4}>
+            {!open ? (
               <Button
-                variant="text"
+                variant="outlined"
+                disabled={status === "pending"}
+                fullWidth
+                onClick={execute}>
+                Send
+              </Button>
+            ) : (
+              <Button
+                variant="outlined"
+                className={classes.sentNotice}
                 disabled
                 fullWidth
-                onClick={() => setOpen(false)}
-              >
+                onClick={() => setOpen(false)}>
                 <DoneOutline className={classes.sentCheck} /> Email Sent
               </Button>
-            </Grid>
-          )}
+            )}
+          </Grid>
         </Grid>
       </div>
-    </Grid>
+    </section>
   );
 };
 

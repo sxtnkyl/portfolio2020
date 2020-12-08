@@ -12,10 +12,9 @@ import {
   makeStyles,
 } from "../theme/themIndex";
 
-import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
-import ProfessionalPic from "../theme/profilePicProfessional.jpg";
+import ProfessionalPic from "../theme/smProfPic.jpg";
 import CasualPic from "../theme/profilePic.jpeg";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
       paddingRight: "10vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "5vw",
+      paddingRight: "5vw",
     },
     "& .MuiFormControlLabel-root": {
       padding: theme.spacing(0),
@@ -47,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     height: "auto",
     width: "60%",
+    border: `2px solid ${theme.palette.primary.light}`,
     [theme.breakpoints.down("lg")]: {
       width: "80%",
     },
@@ -84,30 +88,30 @@ const About = () => {
   //true = professional, false = casual
   const [about, setAbout] = useState(true);
 
-  const ref = useRef();
-  const onScreen = useInView(ref, 1);
-  const sectionTitle = useSectionTitleSlide("About", onScreen, ref);
+  const sectionTitle = useSectionTitleSlide("About", 0.5, "h2");
 
   const professionalInfo = (
     <>
       <p>
-        Hey, I'm Kyle, a driven young professional looking to enter the world of
-        full stack web design & development. I've spent the last two years
-        honing my skills in top web technologies including Nodejs, Reactjs,
-        SCSS, Material-UI, VS Code, Git, AWS Services, and PostgresQL. At my
-        last job, I worked within a large team of other environmental
-        consultants, multiple managers, and clients to remediate environmental
-        liabilities with technical solutions. I gained a lot of valuable
-        experience pertaining to communication, teamwork, meeting the varied
-        expectations of multiple people, and achieving goals on a deadline.
+        Hey! My name is Kyle Sexton! I'm a former Geologist and Atlanta GA
+        resident, now a self taught, React focused web developer. I have 5 years
+        engineering consulting experience where I worked as a geophysicist and
+        environmental consultant. This work enabled an adventurous array of
+        travel across the southeast, where I applied geophysical methods for
+        subsurface investigations and collaborated with a large team of
+        geochemical scientists to remediate underground environmental hazards.
       </p>
       <p>
-        I'm hardworking, receptive and unrelenting when it comes to doing the
-        very best that I can. This is demonstrated by my independent software
-        development study, culminating in a the ability to produce modern day
-        web applications within one year. If all of this sounds good to you, I'm
-        ready to work, preferably full-time. I'm open to either local (Atlanta,
-        GA) or remote work.
+        I began coding from ground zero in late 2018 and immediately knew it
+        would lead me on a new adventure. Casual Javascript coding was a gateway
+        to the endless avenues of software development. Within 2 years my skills
+        have developed from zero coding experience, to deploying single page
+        applications, into AWS integrated-fullstack services and establishing
+        freelanced clients.
+      </p>
+      <p>
+        If all of this sounds good to you, reach out with the contact section
+        below. Let's collaborate!
       </p>
     </>
   );
@@ -118,7 +122,7 @@ const About = () => {
       of rock climbing and beach volleyball. My love for these sports can be
       summarized in that both require an analytical approach, and require one to
       be flexible with on-the-fly adjustments in competitive settings. Not to
-      mention they take place in some amazing sceneries around the globe.
+      mention they require sandy beaches or scenic mountains. Not bad!
     </p>
   );
 
@@ -142,10 +146,13 @@ const About = () => {
       className={classes.grid}
       alignItems="center"
       ref={ref1}
-      style={spring1}
-    >
+      style={spring1}>
       <Grid xs={12} lg={6} item className={classes.center}>
-        <Avatar src={ProfessionalPic} className={classes.avatar} />
+        <Avatar
+          src={ProfessionalPic}
+          className={classes.avatar}
+          alt="professional picture"
+        />
       </Grid>
       <Grid xs={12} lg={6} item className={classes.center}>
         <Typography variant="h6" className={classes.text}>
@@ -161,10 +168,13 @@ const About = () => {
       className={classes.grid}
       alignItems="center"
       ref={ref2}
-      style={spring2}
-    >
+      style={spring2}>
       <Grid xs={12} lg={6} item className={classes.center}>
-        <Avatar src={CasualPic} className={classes.avatar} />
+        <Avatar
+          src={CasualPic}
+          className={classes.avatar}
+          alt="casual picture"
+        />
       </Grid>
       <Grid xs={12} lg={6} item className={classes.center}>
         <Typography variant="h6" className={classes.text}>
@@ -175,17 +185,17 @@ const About = () => {
   );
 
   return (
-    <Grid item xs={12} className={classes.section} id="about">
+    <section className={classes.section} id="about">
       {sectionTitle}
       <Divider variant="fullWidth" />
       <FormControlLabel
         control={<Switch onChange={() => setAbout(!about)} edge="start" />}
         labelPlacement="start"
-        label="Info Type"
+        label="Career / Casual"
         className={classes.text}
       />
       {about ? professionalGrid : casualGrid}
-    </Grid>
+    </section>
   );
 };
 

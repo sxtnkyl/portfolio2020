@@ -59,11 +59,17 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(0),
     textShadow: theme.palette.textShadow,
   },
-  concepts: {
+  summary: {
     fontStyle: "italic",
     fontFamily: "Alatsi",
     padding: theme.spacing(2),
     textShadow: theme.palette.textShadow,
+  },
+  innerHeader: {
+    fontStyle: "italic",
+    fontFamily: "Alatsi",
+    color: theme.palette.secondary.main,
+    paddingBottom: theme.spacing(1),
   },
   divider: {
     marginTop: theme.spacing(2),
@@ -107,10 +113,11 @@ const SingleCard = (props) => {
   const {
     name,
     summary,
-    description,
+    technicalChallenges,
+    solutions,
     concepts,
+    demoUrl,
     githubUrl,
-    codepenUrl,
   } = props.proj;
 
   const [bg, setBackground] = useState([30, 60, 40, 70]);
@@ -141,7 +148,7 @@ const SingleCard = (props) => {
   });
 
   const springCardLines = {
-    background: abcd.interpolate(
+    background: abcd.to(
       (a, b, c, d) =>
         `linear-gradient(${a}deg, ${RGBopacity(
           theme.palette.primary.light,
@@ -168,7 +175,7 @@ const SingleCard = (props) => {
   const AnimatedDivider = animated(Divider);
 
   const slidingText = useSpring({
-    top: !expanded ? "100%" : "0",
+    top: !expanded ? "100%" : "0%",
   });
   const rotateArrow = useSpring({
     transform: !expanded ? "rotate(0deg)" : "rotate(180deg)",
@@ -183,29 +190,39 @@ const SingleCard = (props) => {
         <Typography variant="h5">{name}</Typography>
       </CardActions>
       <CardContent>
-        <Typography variant="body1">{summary}</Typography>
-
+        <Typography variant="body1" className={classes.innerHeader}>
+          Technical Challenges:
+        </Typography>
+        <Typography variant="body1">{technicalChallenges}</Typography>
         <Divider className={classes.pad} variant="middle" />
-        <Typography variant="body1">{description}</Typography>
+        <Typography variant="body1" className={classes.innerHeader}>
+          Solutions:
+        </Typography>
+        <Typography variant="body1">{solutions}</Typography>
         <Divider className={classes.pad} variant="middle" />
-        {codepenUrl && (
+        <Typography variant="body1" className={classes.innerHeader}>
+          Concepts:
+        </Typography>
+        <Typography variant="body1">{concepts}</Typography>
+        <Divider className={classes.pad} variant="middle" />
+        {demoUrl && (
           <Button
+            aria-label="link to live demo"
             variant="outlined"
             target="_blank"
             rel="noopener noreferrer"
-            href={codepenUrl}
-            style={{ marginRight: "16px" }}
-          >
+            href={demoUrl}
+            style={{ marginRight: "16px" }}>
             <span className={classes.demoButton}>Live Demo</span>
           </Button>
         )}
         {githubUrl && (
           <Button
+            aria-label="link to code repo"
             variant="outlined"
             target="_blank"
             rel="noopener noreferrer"
-            href={githubUrl}
-          >
+            href={githubUrl}>
             <GitHub className={classes.iconButton} />
           </Button>
         )}
@@ -218,8 +235,7 @@ const SingleCard = (props) => {
       style={springCardLines}
       className={classes.card}
       key={key}
-      onClick={randomize}
-    >
+      onClick={randomize}>
       <AnimatedTitle variant="h4" style={fadeOut} className={classes.title}>
         {name}
       </AnimatedTitle>
@@ -229,11 +245,10 @@ const SingleCard = (props) => {
         variant="middle"
       />
       <AnimatedConcepts
-        className={classes.concepts}
+        className={classes.summary}
         style={fadeOut}
-        variant="body1"
-      >
-        {concepts}
+        variant="body1">
+        {summary}
       </AnimatedConcepts>
       <AnimatedArrow
         style={rotateArrow}

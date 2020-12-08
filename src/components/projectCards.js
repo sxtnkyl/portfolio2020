@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Grid, Divider, makeStyles } from "../theme/themIndex";
-import SingleCard from "./singleCard";
+import SingleCard from "./SingleCard";
 import projects from "../utility/projectData";
-import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,33 +12,34 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "10vw",
       paddingRight: "10vw",
     },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "5vw",
+      paddingRight: "5vw",
+    },
   },
 }));
 
 const ProjectCards = () => {
   const classes = useStyles();
 
-  const ref = useRef();
-  const onScreen = useInView(ref, 1);
-  const sectionTitle = useSectionTitleSlide("Projects", onScreen, ref);
+  const sectionTitle = useSectionTitleSlide("Projects", 0.5, "h2");
 
   return (
-    <Grid item xs={12} className={classes.section} id="project-cards">
+    <section className={classes.section} id="project-cards">
       {sectionTitle}
       <Divider variant="fullWidth" />
       <Grid
         container
         justify="space-around"
         spacing={6}
-        className={classes.grid}
-      >
+        className={classes.grid}>
         {projects.map((proj, index) => (
           <Grid item xs={12} md={5} lg={6} key={index} className={classes.item}>
             <SingleCard proj={proj} />
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    </section>
   );
 };
 

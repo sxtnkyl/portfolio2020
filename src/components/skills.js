@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   Grid,
   Divider,
@@ -12,7 +12,6 @@ import {
 } from "../theme/themIndex";
 import Kyle_Sexton_fullstack from "../utility/Kyle_Sexton_fullstack.pdf";
 import skillData from "../utility/skillsData";
-import useInView from "../utility/inViewHook";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       paddingLeft: "10vw",
       paddingRight: "10vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "5vw",
+      paddingRight: "5vw",
     },
   },
   active: {
@@ -44,9 +47,7 @@ const Skills = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const ref = useRef();
-  const onScreen = useInView(ref, 1);
-  const sectionTitle = useSectionTitleSlide("Skills", onScreen, ref);
+  const sectionTitle = useSectionTitleSlide("Skills", 0.5, "h2");
 
   const skillsCategories = skillData.map((s) => {
     let { category, skills } = s;
@@ -61,24 +62,30 @@ const Skills = () => {
             </Typography>
           </Grid>
         ))}
+        {category === "Back End" && (
+          <Grid item xs={12}>
+            <Typography variant="subtitle1">
+              <span className={classes.dash}>- </span>AWS Route53 / CloudFront /
+              S3 / Lambda / IAM / API Gateway / DynamoDB / SES / Cloud Watch
+            </Typography>
+          </Grid>
+        )}
       </Grid>
     );
 
     return (
       <Grid item xs={12} className={classes.item} key={category}>
         <ExpansionPanel
+          id={category}
           expanded={expanded === category}
-          onChange={handleChange(category)}
-        >
+          onChange={handleChange(category)}>
           <ExpansionPanelSummary
-            expandIcon={<ExpandMore />}
+            expandIcon={<ExpandMore aria-label="expand panel" />}
             aria-controls={category}
-            id="panel1bh-header"
-          >
+            id={category}>
             <Typography
               variant="h4"
-              className={expanded === category ? classes.active : ""}
-            >
+              className={expanded === category ? classes.active : ""}>
               {category}
             </Typography>
           </ExpansionPanelSummary>
@@ -89,26 +96,28 @@ const Skills = () => {
     );
   });
 
+  const resumeLink = (
+    <Typography variant="subtitle1" style={{ marginTop: "32px" }}>
+      <Link
+        className={classes.pdf}
+        href={Kyle_Sexton_fullstack}
+        target="_blank"
+        rel="noopener noreferrer"
+        alt="resume link">
+        <span style={{ color: "white" }}>* </span>Download Kyle's Formal Resume
+      </Link>
+    </Typography>
+  );
+
   return (
-    <Grid item xs={12} className={classes.section} id="skills">
+    <section className={classes.section} id="skills">
       {sectionTitle}
       <Divider variant="fullWidth" />
-      <Grid container spacing={4} className={classes.grid}>
+      <Grid container spacing={4}>
         {skillsCategories}
       </Grid>
-      <Typography variant="subtitle1" style={{ marginTop: "32px" }}>
-        <Link
-          className={classes.pdf}
-          href={Kyle_Sexton_fullstack}
-          target="_blank"
-          rel="noopener noreferrer"
-          alt="resume link"
-        >
-          <span style={{ color: "white" }}>* </span>Download Kyle's Formal
-          Resume
-        </Link>
-      </Typography>
-    </Grid>
+      {resumeLink}
+    </section>
   );
 };
 
