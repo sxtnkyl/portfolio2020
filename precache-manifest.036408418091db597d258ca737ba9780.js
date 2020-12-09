@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "88486c70737d8995e37551427f871e75",
+    "revision": "216badf00ce44c75b10a983d272137a5",
     "url": "/portfolio2020/index.html"
   },
   {
-    "revision": "27848fa66fa98a2c86c6",
+    "revision": "4c5ff049cefe7cc70ab4",
     "url": "/portfolio2020/static/css/main.69eda509.chunk.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio2020/static/js/2.f71cb58c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "27848fa66fa98a2c86c6",
-    "url": "/portfolio2020/static/js/main.ca437e00.chunk.js"
+    "revision": "4c5ff049cefe7cc70ab4",
+    "url": "/portfolio2020/static/js/main.03d6315d.chunk.js"
   },
   {
     "revision": "c31c45cc238516ab74d0",
     "url": "/portfolio2020/static/js/runtime-main.e7ba4fc8.js"
   },
   {
-    "revision": "9d40a7c68a85dc8f383c89df125f4c5e",
-    "url": "/portfolio2020/static/media/Kyle_Sexton_fullstack.9d40a7c6.pdf"
+    "revision": "d3af53b36111f48838c1873f7fc37f4e",
+    "url": "/portfolio2020/static/media/Kyle_Sexton_Resume_Dec2020.d3af53b3.pdf"
   },
   {
     "revision": "7c6c9a89f0bd6e7f884cbc5379998be6",
