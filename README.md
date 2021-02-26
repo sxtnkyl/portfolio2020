@@ -14,4 +14,5 @@ Built with:
 
 Applied Concepts:
 
-###### `Reactjs` `Custom Hooks` `AWS Lambda` `GitPages` `Intersection Observer API` `React Spring`
+###### `Responsive Design` `Custom Hooks` `AWS Lambda` `GitPages` 
+###### `Cloud Integration` `Intersection Observer API` `Lighthouse Metrics`
