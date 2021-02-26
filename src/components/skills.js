@@ -10,7 +10,7 @@ import {
   Link,
   makeStyles,
 } from "../theme/themIndex";
-import Kyle_Sexton_fullstack from "../utility/Kyle_Sexton_Resume_Dec2020.pdf";
+import Kyle_Sexton_fullstack from "../utility/Kyle_Sexton_Resume_Jan2021.pdf";
 import skillData from "../utility/skillsData";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
