@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/portfolio2020/static/css/main.69eda509.chunk.css",
-    "main.js": "/portfolio2020/static/js/main.62f2728d.chunk.js",
-    "main.js.map": "/portfolio2020/static/js/main.62f2728d.chunk.js.map",
+    "main.js": "/portfolio2020/static/js/main.a5b40554.chunk.js",
+    "main.js.map": "/portfolio2020/static/js/main.a5b40554.chunk.js.map",
     "runtime-main.js": "/portfolio2020/static/js/runtime-main.e7ba4fc8.js",
     "runtime-main.js.map": "/portfolio2020/static/js/runtime-main.e7ba4fc8.js.map",
-    "static/js/2.f71cb58c.chunk.js": "/portfolio2020/static/js/2.f71cb58c.chunk.js",
-    "static/js/2.f71cb58c.chunk.js.map": "/portfolio2020/static/js/2.f71cb58c.chunk.js.map",
+    "static/js/2.77e27792.chunk.js": "/portfolio2020/static/js/2.77e27792.chunk.js",
+    "static/js/2.77e27792.chunk.js.map": "/portfolio2020/static/js/2.77e27792.chunk.js.map",
     "index.html": "/portfolio2020/index.html",
-    "precache-manifest.2ccde5409eb58e2d3ac62db28e70ba9a.js": "/portfolio2020/precache-manifest.2ccde5409eb58e2d3ac62db28e70ba9a.js",
+    "precache-manifest.3147f165171c7536b52fbffbbd3237d3.js": "/portfolio2020/precache-manifest.3147f165171c7536b52fbffbbd3237d3.js",
     "service-worker.js": "/portfolio2020/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/portfolio2020/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.f71cb58c.chunk.js.LICENSE.txt": "/portfolio2020/static/js/2.f71cb58c.chunk.js.LICENSE.txt",
-    "static/media/Kyle_Sexton_Resume_Dec2020.pdf": "/portfolio2020/static/media/Kyle_Sexton_Resume_Dec2020.d3af53b3.pdf",
+    "static/js/2.77e27792.chunk.js.LICENSE.txt": "/portfolio2020/static/js/2.77e27792.chunk.js.LICENSE.txt",
+    "static/media/Kyle_Sexton_Resume_Jan2021.pdf": "/portfolio2020/static/media/Kyle_Sexton_Resume_Jan2021.40d6eecf.pdf",
     "static/media/espontas.jpeg": "/portfolio2020/static/media/espontas.7c6c9a89.jpeg",
     "static/media/newContact.jpg": "/portfolio2020/static/media/newContact.9ce2174b.jpg",
     "static/media/profilePic.jpeg": "/portfolio2020/static/media/profilePic.6500de55.jpeg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e7ba4fc8.js",
-    "static/js/2.f71cb58c.chunk.js",
+    "static/js/2.77e27792.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.62f2728d.chunk.js"
+    "static/js/main.a5b40554.chunk.js"
   ]
 }

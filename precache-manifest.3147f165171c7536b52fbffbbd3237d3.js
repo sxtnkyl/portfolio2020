@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b8158cf99ea7f9b543d210de49095b3a",
+    "revision": "328ee9a66e546750e4f6403b0460d713",
     "url": "/portfolio2020/index.html"
   },
   {
-    "revision": "1f3e9ec240773b67b7a5",
+    "revision": "801d86fea185034280a7",
     "url": "/portfolio2020/static/css/main.69eda509.chunk.css"
   },
   {
-    "revision": "f639fc9803bad7a4f36a",
-    "url": "/portfolio2020/static/js/2.f71cb58c.chunk.js"
+    "revision": "81625543952210fbca5f",
+    "url": "/portfolio2020/static/js/2.77e27792.chunk.js"
   },
   {
     "revision": "f5446549c6e5e145cb9b69a4e9f134e1",
-    "url": "/portfolio2020/static/js/2.f71cb58c.chunk.js.LICENSE.txt"
+    "url": "/portfolio2020/static/js/2.77e27792.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1f3e9ec240773b67b7a5",
-    "url": "/portfolio2020/static/js/main.62f2728d.chunk.js"
+    "revision": "801d86fea185034280a7",
+    "url": "/portfolio2020/static/js/main.a5b40554.chunk.js"
   },
   {
     "revision": "c31c45cc238516ab74d0",
     "url": "/portfolio2020/static/js/runtime-main.e7ba4fc8.js"
   },
   {
-    "revision": "d3af53b36111f48838c1873f7fc37f4e",
-    "url": "/portfolio2020/static/media/Kyle_Sexton_Resume_Dec2020.d3af53b3.pdf"
+    "revision": "40d6eecfd9cee07fc522575eca2b4f57",
+    "url": "/portfolio2020/static/media/Kyle_Sexton_Resume_Jan2021.40d6eecf.pdf"
   },
   {
     "revision": "7c6c9a89f0bd6e7f884cbc5379998be6",
