@@ -94,7 +94,7 @@ const AboutSection = () => {
       <p>
         Hey! My name is Kyle Sexton! I've been a Frontend Engineer since 2021. I
         work with React and Typscript to build scalable, maintainable, and
-        intellible applications. On the side, I enjoy leveraging Nextjs,
+        intelligible applications. On the side, I enjoy leveraging Nextjs,
         Material-UI, and AWS services to create practical and seamless
         applications.
       </p>

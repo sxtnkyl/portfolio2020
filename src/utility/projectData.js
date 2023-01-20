@@ -42,7 +42,7 @@ const projects = [
     concepts:
       "React, Framer Motion, Material UI, Node.js, AWS, Route53, Cloudfront, IAM, S3, API Gateway, Lambda, CORS policy",
     thumbnail: "",
-    demoUrl: "https://www.tailswagatlanta.com/",
+    demoUrl: "https://master.dmv0amx140mtx.amplifyapp.com/",
     githubUrl: "https://github.com/sxtnkyl/tailwag",
   },
   {

@@ -17,7 +17,7 @@ const skillData = [
       "Formik",
       "React Router/DOM",
       "Framer Motion",
-      "RESTful/QraphQL",
+      "RESTful/GraphQL",
       "Material UI",
       "Styled Components",
       "TailwindCSS",
