@@ -86,7 +86,7 @@ const Title = () => {
       <div className={classes.filter}>
         {sectionTitle}
         <Divider variant="middle" />
-        <Typography variant="h3">Full Stack Dev</Typography>
+        <Typography variant="h3">Frontend Engineer</Typography>
         <Button
           rel="noopener noreferrer"
           aria-label="link to github"

@@ -17,6 +17,21 @@ const projects = [
   //demoUrl: deployed project
   //githubUrl: code repo
   {
+    name: "Beer Bulletin",
+    summary:
+      "Full stack application to find and trade beers, keep track of visited breweries, and unlock in app milestones.",
+    technicalChallenges:
+      "Create a full stack application using the Nextjs framework/Vercel deploy, Sequelize, and MongoDB.",
+    solutions:
+      "Nextjs will provide smooth server-side rendering, SEO, accessibility, and other necessary features to be an efficient and seamless PWA. Material-UI and Framer Motion provide the UI experience, JWT are used for authentication, and Sequelize with MongoDB provide backend utility.",
+    css: "#23d5ab",
+    concepts:
+      "React, React Hooks, Authentication, JWT, PWA, Middleware, Non-Relational DB's",
+    thumbnail: "",
+    demoUrl: "",
+    githubUrl: "https://github.com/sxtnkyl/beer-bulletin",
+  },
+  {
     name: "Tail Wag Dog Training",
     summary: "Client landing page for a local canine training business",
     technicalChallenges:
@@ -75,23 +90,23 @@ const projects = [
     demoUrl: "https://sxtnkyl.github.io/handsampler/",
     githubUrl: "https://github.com/sxtnkyl/handsampler",
   },
-  {
-    name: "Pomodoro",
-    summary: "A Pomodoro timer for tracking session and break intervals",
-    technicalChallenges:
-      "Need to learn React somehow! One of my first coding exercises. Needed to obtain a grasp on general coding practices, React app structure, and basic html/css.",
-    solutions:
-      "React hooks was applied to accept minute values for session and break intervals, display the realtime countdown, repeat the intervals, and track the number of cycles completed. Making a smooth background gradient and progress bar provided solid practice with conditional styling.",
-    css: "#23d5ab",
-    concepts:
-      "HTML, CSS, Javascript, React, React Hooks, UseEffect Cleanup, CSS trainsitions",
-    thumbnail: "pomodoro",
-    demoUrl: "https://codepen.io/sxtnkyl/pen/KLqLPX",
-    githubUrl: "https://codepen.io/sxtnkyl/pen/KLqLPX",
-  },
 ];
 
 // const otherProjects = [
+// {
+//   name: "Pomodoro",
+//   summary: "A Pomodoro timer for tracking session and break intervals",
+//   technicalChallenges:
+//     "Need to learn React somehow! One of my first coding exercises. Needed to obtain a grasp on general coding practices, React app structure, and basic html/css.",
+//   solutions:
+//     "React hooks was applied to accept minute values for session and break intervals, display the realtime countdown, repeat the intervals, and track the number of cycles completed. Making a smooth background gradient and progress bar provided solid practice with conditional styling.",
+//   css: "#23d5ab",
+//   concepts:
+//     "HTML, CSS, Javascript, React, React Hooks, UseEffect Cleanup, CSS trainsitions",
+//   thumbnail: "pomodoro",
+//   demoUrl: "https://codepen.io/sxtnkyl/pen/KLqLPX",
+//   githubUrl: "https://codepen.io/sxtnkyl/pen/KLqLPX",
+// },
 // {
 //   name: "Calculator",
 //   summary: "A React calculator with some additional functionality",
