@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SingleCard = (props) => {
+const ProjectCard = (props) => {
   const { key } = props;
   const {
     name,
@@ -260,4 +260,4 @@ const SingleCard = (props) => {
   );
 };
 
-export default SingleCard;
+export default ProjectCard;

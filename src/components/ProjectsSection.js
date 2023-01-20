@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Divider, makeStyles } from "../theme/themIndex";
-import SingleCard from "./SingleCard";
+import SingleCard from "./ProjectCard";
 import projects from "../utility/projectData";
 import useSectionTitleSlide from "../utility/sectionTitleSlide";
 
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProjectCards = () => {
+const ProjectsSection = () => {
   const classes = useStyles();
 
   const sectionTitle = useSectionTitleSlide("Projects", 0.5, "h2");
@@ -43,4 +43,4 @@ const ProjectCards = () => {
   );
 };
 
-export default ProjectCards;
+export default ProjectsSection;

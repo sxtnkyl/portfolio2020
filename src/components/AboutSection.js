@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const About = () => {
+const AboutSection = () => {
   const classes = useStyles();
 
   const [isProfessionalView, setIsProfessionalView] = useState(true);
@@ -203,4 +203,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

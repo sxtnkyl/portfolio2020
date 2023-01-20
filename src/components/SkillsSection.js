@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Skills = () => {
+const SkillsSection = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
@@ -121,4 +121,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsSection;

@@ -5,11 +5,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "./theme/muiTheme";
 import { Container } from "./theme/themIndex";
 
-import Title from "./components/Title";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import ProjectCards from "./components/ProjectCards";
-import Contact from "./components/Contact";
+import TitleSection from "./components/TitleSection";
+import AboutSection from "./components/AboutSection";
+import SkillsSection from "./components/SkillsSection";
+import ProjectCards from "./components/ProjectsSection";
+import ContactSection from "./components/Contact";
 
 // /https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
@@ -23,11 +23,11 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <Container disableGutters maxWidth={false}>
-        <Title />
-        <About />
-        <Skills />
+        <TitleSection />
+        <AboutSection />
+        <SkillsSection />
         <ProjectCards />
-        <Contact />
+        <ContactSection />
       </Container>
     </MuiThemeProvider>
   );

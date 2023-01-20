@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Title = () => {
+const TitleSection = () => {
   const classes = useStyles();
 
   const sectionTitle = useSectionTitleSlide("Kyle Sexton", 0.01, "h1");
@@ -126,4 +126,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default TitleSection;
