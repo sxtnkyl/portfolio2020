@@ -9,7 +9,7 @@ import TitleSection from "./components/TitleSection";
 import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectCards from "./components/ProjectsSection";
-import ContactSection from "./components/Contact";
+import ContactSection from "./components/ContactSection";
 
 // /https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 

@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Contact = () => {
+const ContactSection = () => {
   const classes = useStyles();
 
   const [name, setName] = useState("");
@@ -191,4 +191,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;
