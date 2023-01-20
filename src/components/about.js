@@ -85,29 +85,24 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
   const classes = useStyles();
 
-  //true = professional, false = casual
-  const [about, setAbout] = useState(true);
+  const [isProfessionalView, setIsProfessionalView] = useState(true);
 
   const sectionTitle = useSectionTitleSlide("About", 0.5, "h2");
 
   const professionalInfo = (
     <>
       <p>
-        Hey! My name is Kyle Sexton! I'm a former Geologist and Atlanta GA
-        resident, now a self taught, React focused web developer. I have 5 years
-        engineering consulting experience where I worked as a geophysicist and
-        environmental consultant. This work enabled an adventurous array of
-        travel across the southeast, where I applied geophysical methods for
-        subsurface investigations and collaborated with a large team of
-        geochemical scientists to remediate underground environmental hazards.
+        Hey! My name is Kyle Sexton! I've been a Frontend Engineer since 2021. I
+        work with React and Typscript to build scalable, maintainable, and
+        intellible applications. On the side, I enjoy leveraging Nextjs,
+        Material-UI, and AWS services to create practical and seamless
+        applications.
       </p>
       <p>
-        I began coding from ground zero in late 2018 and immediately knew it
-        would lead me on a new adventure. Casual Javascript coding was a gateway
-        to the endless avenues of software development. Within 2 years my skills
-        have developed from zero coding experience, to deploying single page
-        applications, into AWS integrated-fullstack services and establishing
-        freelanced clients.
+        As a former Geologist I have 5 years engineering consulting experience
+        where I worked as a geophysicist and environmental consultant, applying
+        geophysical methods for subsurface investigations to remediate
+        underground environmental hazards.
       </p>
       <p>
         If all of this sounds good to you, reach out with the contact section
@@ -130,13 +125,17 @@ const About = () => {
   const ref1 = useRef();
   const ref2 = useRef();
   const spring1 = useSpring({
-    opacity: about ? "1" : "0",
-    transform: about ? "translate3d(0, 0, 0)" : "translate3d(-40px, 0, 0)",
+    opacity: isProfessionalView ? "1" : "0",
+    transform: isProfessionalView
+      ? "translate3d(0, 0, 0)"
+      : "translate3d(-40px, 0, 0)",
     config: config.gentle,
   });
   const spring2 = useSpring({
-    opacity: about ? "0" : "1",
-    transform: about ? "translate3d(-40px, 0, 0)" : "translate3d(0, 0, 0)",
+    opacity: isProfessionalView ? "0" : "1",
+    transform: isProfessionalView
+      ? "translate3d(-40px, 0, 0)"
+      : "translate3d(0, 0, 0)",
     config: config.gentle,
   });
 
@@ -189,12 +188,17 @@ const About = () => {
       {sectionTitle}
       <Divider variant="fullWidth" />
       <FormControlLabel
-        control={<Switch onChange={() => setAbout(!about)} edge="start" />}
+        control={
+          <Switch
+            onChange={() => setIsProfessionalView(!isProfessionalView)}
+            edge="start"
+          />
+        }
         labelPlacement="start"
         label="Career / Casual"
         className={classes.text}
       />
-      {about ? professionalGrid : casualGrid}
+      {isProfessionalView ? professionalGrid : casualGrid}
     </section>
   );
 };
