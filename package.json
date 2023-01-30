@@ -1,5 +1,5 @@
 {
-  "homepage": "http://sxtnkyl.github.io/portfolio2020",
+  "homepage": "sxtnkyl.github.io",
   "name": "2020portfolio",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "echo ksextonexe.info > ./build/CNAME && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
