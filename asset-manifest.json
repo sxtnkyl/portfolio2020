@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ksextonexe.info/static/css/main.e6c13ad2.css",
-    "main.js": "/ksextonexe.info/static/js/main.b155b7da.js",
-    "static/media/newContact.jpg": "/ksextonexe.info/static/media/newContact.912d8301514f020fc19e.jpg",
-    "static/media/espontas.jpeg": "/ksextonexe.info/static/media/espontas.44450b30356087c647be.jpeg",
-    "static/media/Kyle_Sexton_Resume_Jan2023.pdf": "/ksextonexe.info/static/media/Kyle_Sexton_Resume_Jan2023.9e4e6a20eb7a66aabaa4.pdf",
-    "static/media/smProfPic.jpg": "/ksextonexe.info/static/media/smProfPic.71631e2beb2d87a8f200.jpg",
-    "static/media/profilePic.jpeg": "/ksextonexe.info/static/media/profilePic.62730cd7039a6f14434b.jpeg",
-    "index.html": "/ksextonexe.info/index.html",
-    "main.e6c13ad2.css.map": "/ksextonexe.info/static/css/main.e6c13ad2.css.map",
-    "main.b155b7da.js.map": "/ksextonexe.info/static/js/main.b155b7da.js.map"
+    "main.css": "./static/css/main.e6c13ad2.css",
+    "main.js": "./static/js/main.7f0a03c3.js",
+    "static/media/newContact.jpg": "./static/media/newContact.912d8301514f020fc19e.jpg",
+    "static/media/espontas.jpeg": "./static/media/espontas.44450b30356087c647be.jpeg",
+    "static/media/Kyle_Sexton_Resume_Jan2023.pdf": "./static/media/Kyle_Sexton_Resume_Jan2023.9e4e6a20eb7a66aabaa4.pdf",
+    "static/media/smProfPic.jpg": "./static/media/smProfPic.71631e2beb2d87a8f200.jpg",
+    "static/media/profilePic.jpeg": "./static/media/profilePic.62730cd7039a6f14434b.jpeg",
+    "index.html": "./index.html",
+    "main.e6c13ad2.css.map": "./static/css/main.e6c13ad2.css.map",
+    "main.7f0a03c3.js.map": "./static/js/main.7f0a03c3.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b155b7da.js"
+    "static/js/main.7f0a03c3.js"
   ]
 }
