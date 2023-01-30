@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/sxtnkyl.github.io/static/css/main.e6c13ad2.css",
-    "main.js": "/sxtnkyl.github.io/static/js/main.921fcc91.js",
-    "static/media/newContact.jpg": "/sxtnkyl.github.io/static/media/newContact.912d8301514f020fc19e.jpg",
-    "static/media/espontas.jpeg": "/sxtnkyl.github.io/static/media/espontas.44450b30356087c647be.jpeg",
-    "static/media/Kyle_Sexton_Resume_Jan2023.pdf": "/sxtnkyl.github.io/static/media/Kyle_Sexton_Resume_Jan2023.9e4e6a20eb7a66aabaa4.pdf",
-    "static/media/smProfPic.jpg": "/sxtnkyl.github.io/static/media/smProfPic.71631e2beb2d87a8f200.jpg",
-    "static/media/profilePic.jpeg": "/sxtnkyl.github.io/static/media/profilePic.62730cd7039a6f14434b.jpeg",
-    "index.html": "/sxtnkyl.github.io/index.html",
-    "main.e6c13ad2.css.map": "/sxtnkyl.github.io/static/css/main.e6c13ad2.css.map",
-    "main.921fcc91.js.map": "/sxtnkyl.github.io/static/js/main.921fcc91.js.map"
+    "main.css": "/ksextonexe.info/static/css/main.e6c13ad2.css",
+    "main.js": "/ksextonexe.info/static/js/main.b155b7da.js",
+    "static/media/newContact.jpg": "/ksextonexe.info/static/media/newContact.912d8301514f020fc19e.jpg",
+    "static/media/espontas.jpeg": "/ksextonexe.info/static/media/espontas.44450b30356087c647be.jpeg",
+    "static/media/Kyle_Sexton_Resume_Jan2023.pdf": "/ksextonexe.info/static/media/Kyle_Sexton_Resume_Jan2023.9e4e6a20eb7a66aabaa4.pdf",
+    "static/media/smProfPic.jpg": "/ksextonexe.info/static/media/smProfPic.71631e2beb2d87a8f200.jpg",
+    "static/media/profilePic.jpeg": "/ksextonexe.info/static/media/profilePic.62730cd7039a6f14434b.jpeg",
+    "index.html": "/ksextonexe.info/index.html",
+    "main.e6c13ad2.css.map": "/ksextonexe.info/static/css/main.e6c13ad2.css.map",
+    "main.b155b7da.js.map": "/ksextonexe.info/static/js/main.b155b7da.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.921fcc91.js"
+    "static/js/main.b155b7da.js"
   ]
 }
